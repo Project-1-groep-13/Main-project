@@ -1,0 +1,15 @@
+C:\Users\Chris\OneDrive\Documenten\school\p1\progammeren\voorbeelden game p1\space battle game\space battle game\bin\Debug\space battle game.exe.config
+C:\Users\Chris\OneDrive\Documenten\school\p1\progammeren\voorbeelden game p1\space battle game\space battle game\bin\Debug\space battle game.exe
+C:\Users\Chris\OneDrive\Documenten\school\p1\progammeren\voorbeelden game p1\space battle game\space battle game\bin\Debug\space battle game.pdb
+C:\Users\Chris\OneDrive\Documenten\school\p1\progammeren\voorbeelden game p1\space battle game\space battle game\obj\Debug\space battle game.csproj.AssemblyReference.cache
+C:\Users\Chris\OneDrive\Documenten\school\p1\progammeren\voorbeelden game p1\space battle game\space battle game\obj\Debug\MainWindow.g.cs
+C:\Users\Chris\OneDrive\Documenten\school\p1\progammeren\voorbeelden game p1\space battle game\space battle game\obj\Debug\App.g.cs
+C:\Users\Chris\OneDrive\Documenten\school\p1\progammeren\voorbeelden game p1\space battle game\space battle game\obj\Debug\space battle game_MarkupCompile.cache
+C:\Users\Chris\OneDrive\Documenten\school\p1\progammeren\voorbeelden game p1\space battle game\space battle game\obj\Debug\space battle game_MarkupCompile.lref
+C:\Users\Chris\OneDrive\Documenten\school\p1\progammeren\voorbeelden game p1\space battle game\space battle game\obj\Debug\MainWindow.baml
+C:\Users\Chris\OneDrive\Documenten\school\p1\progammeren\voorbeelden game p1\space battle game\space battle game\obj\Debug\space battle game.g.resources
+C:\Users\Chris\OneDrive\Documenten\school\p1\progammeren\voorbeelden game p1\space battle game\space battle game\obj\Debug\space_battle_game.Properties.Resources.resources
+C:\Users\Chris\OneDrive\Documenten\school\p1\progammeren\voorbeelden game p1\space battle game\space battle game\obj\Debug\space battle game.csproj.GenerateResource.cache
+C:\Users\Chris\OneDrive\Documenten\school\p1\progammeren\voorbeelden game p1\space battle game\space battle game\obj\Debug\space battle game.csproj.CoreCompileInputs.cache
+C:\Users\Chris\OneDrive\Documenten\school\p1\progammeren\voorbeelden game p1\space battle game\space battle game\obj\Debug\space battle game.exe
+C:\Users\Chris\OneDrive\Documenten\school\p1\progammeren\voorbeelden game p1\space battle game\space battle game\obj\Debug\space battle game.pdb
