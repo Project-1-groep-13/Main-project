@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-C:\Users\Chris\OneDrive\Documenten\GitHub\Chrispasma\project p1\project p1\obj\Debug\netcoreapp3.1\
+C:\Users\Chris\OneDrive\Documenten\GitHub\Chrispasma\project p1\project p1\obj\Release\netcoreapp3.1\
 project_p1
 none
 false
-TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
+TRACE;RELEASE;NETCOREAPP;NETCOREAPP3_1;
 C:\Users\Chris\OneDrive\Documenten\GitHub\Chrispasma\project p1\project p1\App.xaml
 2-515874810
 
@@ -16,5 +16,5 @@ C:\Users\Chris\OneDrive\Documenten\GitHub\Chrispasma\project p1\project p1\App.x
 192-1533232326
 Game1Player.xaml;MainWindow.xaml;
 
-False
+True
 
