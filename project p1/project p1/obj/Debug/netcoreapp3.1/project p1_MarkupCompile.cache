@@ -1,5 +1,5 @@
 ﻿project p1
-1.0.0.0
+
 
 winexe
 C#
@@ -12,7 +12,7 @@ TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 C:\Users\Chris\OneDrive\Documenten\GitHub\Chrispasma\project p1\project p1\App.xaml
 2-515874810
 
-6902447783
+41733357290
 192-1533232326
 Game1Player.xaml;MainWindow.xaml;
 
