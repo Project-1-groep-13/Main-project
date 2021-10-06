@@ -12,6 +12,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Game2Player.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Game1Player.xaml">
       <SubType>Designer</SubType>
     </Page>

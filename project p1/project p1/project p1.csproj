@@ -29,4 +29,17 @@
     <Resource Include="images\treasure map.jpg" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Game2Player.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Game2Player.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
 </Project>
