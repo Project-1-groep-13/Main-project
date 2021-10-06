@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 ﻿project p1
 1.0.0.0
 
@@ -18,3 +19,25 @@ Game1Player.xaml;MainWindow.xaml;
 
 False
 
+=======
+﻿project p1
+1.0.0.0
+
+winexe
+C#
+.cs
+C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\
+project_p1
+none
+false
+TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
+C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\App.xaml
+2-515874810
+
+6902447783
+192-1533232326
+Game1Player.xaml;MainWindow.xaml;
+
+False
+
+>>>>>>> Stashed changes

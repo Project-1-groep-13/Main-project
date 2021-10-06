@@ -1,3 +1,9 @@
+<<<<<<< Updated upstream
 is_global = true
 build_property.RootNamespace = project_p1
 build_property.ProjectDir = C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\
+=======
+is_global = true
+build_property.RootNamespace = project_p1
+build_property.ProjectDir = C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\
+>>>>>>> Stashed changes

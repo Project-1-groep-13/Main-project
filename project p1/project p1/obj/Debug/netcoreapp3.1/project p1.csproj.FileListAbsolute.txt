@@ -20,6 +20,31 @@ C:\Users\Chris\OneDrive\Documenten\GitHub\Chrispasma\project p1\project p1\obj\D
 C:\Users\Chris\OneDrive\Documenten\GitHub\Chrispasma\project p1\project p1\obj\Debug\netcoreapp3.1\project p1.dll
 C:\Users\Chris\OneDrive\Documenten\GitHub\Chrispasma\project p1\project p1\obj\Debug\netcoreapp3.1\project p1.pdb
 C:\Users\Chris\OneDrive\Documenten\GitHub\Chrispasma\project p1\project p1\obj\Debug\netcoreapp3.1\project p1.genruntimeconfig.cache
+<<<<<<< Updated upstream
+=======
+\\Mac\Home\Documents\School\HBO ICT\Module 1\Arcade Game\Main-project\project p1\project p1\bin\Debug\netcoreapp3.1\project p1.exe
+\\Mac\Home\Documents\School\HBO ICT\Module 1\Arcade Game\Main-project\project p1\project p1\bin\Debug\netcoreapp3.1\project p1.deps.json
+\\Mac\Home\Documents\School\HBO ICT\Module 1\Arcade Game\Main-project\project p1\project p1\bin\Debug\netcoreapp3.1\project p1.runtimeconfig.json
+\\Mac\Home\Documents\School\HBO ICT\Module 1\Arcade Game\Main-project\project p1\project p1\bin\Debug\netcoreapp3.1\project p1.runtimeconfig.dev.json
+\\Mac\Home\Documents\School\HBO ICT\Module 1\Arcade Game\Main-project\project p1\project p1\bin\Debug\netcoreapp3.1\project p1.dll
+\\Mac\Home\Documents\School\HBO ICT\Module 1\Arcade Game\Main-project\project p1\project p1\bin\Debug\netcoreapp3.1\project p1.pdb
+\\Mac\Home\Documents\School\HBO ICT\Module 1\Arcade Game\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\project p1.csproj.AssemblyReference.cache
+\\Mac\Home\Documents\School\HBO ICT\Module 1\Arcade Game\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\Game1Player.g.cs
+\\Mac\Home\Documents\School\HBO ICT\Module 1\Arcade Game\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+\\Mac\Home\Documents\School\HBO ICT\Module 1\Arcade Game\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\App.g.cs
+\\Mac\Home\Documents\School\HBO ICT\Module 1\Arcade Game\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\project p1_MarkupCompile.cache
+\\Mac\Home\Documents\School\HBO ICT\Module 1\Arcade Game\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\project p1_MarkupCompile.lref
+\\Mac\Home\Documents\School\HBO ICT\Module 1\Arcade Game\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\Game1Player.baml
+\\Mac\Home\Documents\School\HBO ICT\Module 1\Arcade Game\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\MainWindow.baml
+\\Mac\Home\Documents\School\HBO ICT\Module 1\Arcade Game\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\project p1.g.resources
+\\Mac\Home\Documents\School\HBO ICT\Module 1\Arcade Game\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\project p1.GeneratedMSBuildEditorConfig.editorconfig
+\\Mac\Home\Documents\School\HBO ICT\Module 1\Arcade Game\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\project p1.AssemblyInfoInputs.cache
+\\Mac\Home\Documents\School\HBO ICT\Module 1\Arcade Game\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\project p1.AssemblyInfo.cs
+\\Mac\Home\Documents\School\HBO ICT\Module 1\Arcade Game\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\project p1.csproj.CoreCompileInputs.cache
+\\Mac\Home\Documents\School\HBO ICT\Module 1\Arcade Game\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\project p1.dll
+\\Mac\Home\Documents\School\HBO ICT\Module 1\Arcade Game\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\project p1.pdb
+\\Mac\Home\Documents\School\HBO ICT\Module 1\Arcade Game\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\project p1.genruntimeconfig.cache
+>>>>>>> Stashed changes
 C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\bin\Debug\netcoreapp3.1\project p1.exe
 C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\bin\Debug\netcoreapp3.1\project p1.deps.json
 C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\bin\Debug\netcoreapp3.1\project p1.runtimeconfig.json
