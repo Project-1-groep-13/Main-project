@@ -65,6 +65,7 @@ namespace project_p1
 
             if (PauseOnOff == true)
             {
+                
 
                 Gametimer.Stop();
 
