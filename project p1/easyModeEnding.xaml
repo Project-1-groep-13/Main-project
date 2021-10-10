@@ -1,0 +1,20 @@
+﻿<Window x:Class="project_p1.easyModeEnding"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:project_p1"
+        mc:Ignorable="d"
+        Title="easyModeEnding" Height="500" Width="400">
+    <Grid x:Name="myGrid">
+        <Grid.ColumnDefinitions>
+        </Grid.ColumnDefinitions>
+        <Label HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,71,0,0" FontSize="22" FontFamily="Algerian" Content="Congratulations "/>
+        <Button Background="Transparent" Margin="69,162,65,262" FontFamily="Andalus" FontSize="25" Click="Button_Click_1">Play Again</Button>
+        <Button Background="Transparent" Margin="69,242,65,174" FontFamily="Andalus" FontSize="25" Click="Button_Click_2">High Scores</Button>
+        <Button Background="Transparent" Margin="69,331,65,90" FontFamily="Andalus" FontSize="25" Click="Button_Click">Quit</Button>
+        <Label Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,97,0,0" FontSize="22" FontFamily="Algerian" Content="you destroyed      Ships!!"/>
+        <Label x:Name="ScoreGot" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="229,97,0,0" FontSize="22" FontFamily="Algerian"/>
+
+    </Grid>
+</Window>
