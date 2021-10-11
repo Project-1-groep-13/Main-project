@@ -43,3 +43,4 @@ C:\Users\Chris\OneDrive\Documenten\GitHub\Chrispasma\project p1\project p1\obj\D
 \\Mac\Home\Documents\School\HBO ICT\Module 1\Arcade Game\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\project p1.pdb
 \\Mac\Home\Documents\School\HBO ICT\Module 1\Arcade Game\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\project p1.genruntimeconfig.cache
 \\Mac\Home\Documents\School\HBO ICT\Module 1\Arcade Game\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\Game2Player.g.cs
+\\Mac\Home\Documents\School\HBO ICT\Module 1\Arcade Game\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\Game2Player.baml

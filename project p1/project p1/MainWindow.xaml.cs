@@ -44,9 +44,11 @@ namespace project_p1
 
         private void Start2Player_Click(object sender, RoutedEventArgs e)
         {
+            
+            Game2Player game2Player = new Game2Player();
             MainWindow hoofdmenu = new MainWindow();
             hoofdmenu.Visibility = Visibility.Hidden;
-
+            game2Player.Visibility = Visibility.Visible;
         }
 
         private void Highscore_Click(object sender, RoutedEventArgs e)

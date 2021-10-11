@@ -5,13 +5,51 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:project_p1"
         mc:Ignorable="d"
-        Title="Game1Player" Height="615" Width="540">
-    <Canvas Name="MyCanvas" Focusable="True" Background="black" KeyDown="OnKeyDown" KeyUp="OnKeyUp">
+        Title="Game2Player" Height="615" Width="540">
+    <Canvas Name="MyCanvas" 
+            Focusable="True" 
+            Background="black" 
+            
+            >
 
-        <Rectangle x:Name="Player" Height="50" Width="60" Fill="yellow" Canvas.Left="240" Canvas.Top="500"/>
-        <Button Click="WhenButtonClick" x:Name="Pause" Height="50" Width="60" Focusable="False" Background="Transparent" Foreground="White" Canvas.Left="240" Canvas.Top="10" RenderTransformOrigin="-1.12,0.948">Pause</Button>
+        <Rectangle x:Name="Player1" 
+                   Height="70" 
+                   Width="50" 
+                   Fill="yellow" 
+                   Canvas.Left="340" 
+                   Canvas.Top="500"
+                   KeyDown="OnKeyDown1" 
+                   KeyUp="OnKeyUp1"/>
+        <Rectangle x:Name="Player2" 
+                   Height="70" 
+                   Width="50" 
+                   Fill="green" 
+                   Canvas.Left="140" 
+                   Canvas.Top="500"
+                   KeyDown="OnKeyDown2" 
+                   KeyUp="OnKeyUp2"/>
+        <Button Click="WhenButtonClick" 
+                x:Name="Pause" 
+                Height="50" Width="60" 
+                Focusable="False" 
+                Background="Transparent" 
+                Foreground="White" 
+                Canvas.Left="160" 
+                Canvas.Top="10" 
+                RenderTransformOrigin="-1.12,0.948">Pause</Button>
         <Label Name="Scoretext" Content="score: 0" FontSize="18" FontWeight="Bold" Foreground="White"/>
-        <Label Name="Damagetext" Content="score: 0" FontSize="18" FontWeight="Bold" Foreground="White" Canvas.Left="391"/>
+        <Label Name="Damage1text" 
+               Content="score p1: 0" 
+               FontSize="18" 
+               FontWeight="Bold" 
+               Foreground="White" 
+               Canvas.Left="280"/>
+        <Label Name="Damage2text" 
+               Content="score p2: 0" 
+               FontSize="18" 
+               FontWeight="Bold" 
+               Foreground="White" 
+               Canvas.Left="400"/>
 
 
     </Canvas>

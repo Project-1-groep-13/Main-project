@@ -21,9 +21,29 @@
 
             <StackPanel>
                 <Button Click="Start1Player_Click" Height="90" x:Name="Start1Player" Background="Transparent" FontSize="20" FontFamily="Arial" FontStyle="Italic">Start 1 Player</Button>
-                <Button Click="Start2Player_Click" Height="90" x:Name="Start2Player" Background="Transparent" FontSize="20" FontFamily="Arial" FontStyle="Italic">Start 2 Players</Button>
-                <Button Click="Highscore_Click" Height="90" x:Name="Highscore" Background="Transparent" FontSize="20" FontFamily="Arial" FontStyle="Italic">Highscore</Button>
-                <Button Click="Exit_Click" Height="90" x:Name="Exit" Background="Transparent" FontSize="20" FontFamily="Arial" FontStyle="Italic">Exit</Button>
+                <Button Click="Start2Player_Click" 
+                        Height="90" 
+                        x:Name="Start2Player" 
+                        Background="Transparent" 
+                        FontSize="20" 
+                        FontFamily="Arial" 
+                        FontStyle="Italic">Start 2 Players</Button>
+                <Button Click="Highscore_Click" 
+                        Height="90" 
+                        x:Name="Highscore" 
+                        Background="Transparent" 
+                        FontSize="20" 
+                        FontFamily="Arial" 
+                        FontStyle="Italic">
+                        Highscore</Button>
+                <Button Click="Exit_Click" 
+                        Height="90" 
+                        x:Name="Exit" 
+                        Background="Transparent" 
+                        FontSize="20" 
+                        FontFamily="Arial" 
+                        FontStyle="Italic">
+                        Exit</Button>
             </StackPanel>
         </Grid>
 
