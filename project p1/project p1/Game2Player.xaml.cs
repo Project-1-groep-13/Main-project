@@ -231,7 +231,7 @@ namespace project_p2
 
         }
         //knop voor verplaatsing instellen//
-        private void OnKeyDown1(object sender, KeyEventArgs e)
+        private void OnKeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Left)
             {
@@ -241,10 +241,18 @@ namespace project_p2
             {
                 MoveRight1 = true;
             }
+            if (e.Key == Key.A)
+            {
+                MoveLeft2 = true;
+            }
+            if (e.Key == Key.D)
+            {
+                MoveRight2 = true;
+            }
 
         }
         //knop voor verplaatsing instellen + bullet spawnen//
-        private void OnKeyUp1(object sender, KeyEventArgs e)
+        private void OnKeyUp(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Left)
             {
@@ -268,10 +276,33 @@ namespace project_p2
                 Canvas.SetTop(NewBullet, Canvas.GetTop(Player1) - NewBullet.Height);
 
                 MyCanvas.Children.Add(NewBullet);
-
             }
+            if (e.Key == Key.A)
+            {
+                MoveLeft2 = false;
+            }
+            if (e.Key == Key.D)
+            {
+                MoveRight2 = false;
+            }
+            if (e.Key == Key.W)
+            {
+                Rectangle NewBullet = new Rectangle
+                {
+                    Tag = "bullet",
+                    Height = 20,
+                    Width = 5,
+                    Fill = Brushes.White,
+                    Stroke = Brushes.Red,
+                };
+                Canvas.SetLeft(NewBullet, Canvas.GetLeft(Player2) + Player2.Width / 2);
+                Canvas.SetTop(NewBullet, Canvas.GetTop(Player2) - NewBullet.Height);
+
+                MyCanvas.Children.Add(NewBullet);
+            }
+
         }
-       
+
         //knop voor verplaatsing instellen//
         private void OnKeyDown2(object sender, KeyEventArgs e)
         {
