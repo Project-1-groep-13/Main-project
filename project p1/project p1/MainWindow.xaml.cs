@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 using System.Windows.Threading;
+using project_p2;
 
 namespace project_p1
 {
@@ -44,7 +45,6 @@ namespace project_p1
 
         private void Start2Player_Click(object sender, RoutedEventArgs e)
         {
-            
             Game2Player game2Player = new Game2Player();
             MainWindow hoofdmenu = new MainWindow();
             hoofdmenu.Visibility = Visibility.Hidden;

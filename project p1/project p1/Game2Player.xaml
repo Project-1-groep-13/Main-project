@@ -9,7 +9,8 @@
     <Canvas Name="MyCanvas" 
             Focusable="True" 
             Background="black" 
-            
+            KeyDown="OnKeyDown1, OnKeyDown2" 
+            KeyUp="OnKeyUp1, OnKeyUp2"
             >
 
         <Rectangle x:Name="Player1" 
@@ -18,8 +19,7 @@
                    Fill="yellow" 
                    Canvas.Left="340" 
                    Canvas.Top="500"
-                   KeyDown="OnKeyDown1" 
-                   KeyUp="OnKeyUp1"/>
+                   />
         <Rectangle x:Name="Player2" 
                    Height="70" 
                    Width="50" 
