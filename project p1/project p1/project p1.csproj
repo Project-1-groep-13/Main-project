@@ -15,7 +15,13 @@
     <None Remove="images\5.png" />
     <None Remove="images\player.png" />
     <None Remove="images\purple.png" />
+    <None Remove="images\ShipP1.png" />
+    <None Remove="images\ShipP2.png" />
     <None Remove="images\treasure map.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,6 +32,8 @@
     <Resource Include="images\5.png" />
     <Resource Include="images\player.png" />
     <Resource Include="images\purple.png" />
+    <Resource Include="images\ShipP1.png" />
+    <Resource Include="images\ShipP2.png" />
     <Resource Include="images\treasure map.jpg" />
   </ItemGroup>
 

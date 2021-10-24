@@ -9,9 +9,10 @@
     <Canvas Name="MyCanvas" Focusable="True" Background="black" KeyDown="OnKeyDown" KeyUp="OnKeyUp">
 
         <Rectangle x:Name="Player" Height="50" Width="60" Fill="yellow" Canvas.Left="240" Canvas.Top="500"/>
-        <Button Click="WhenButtonClick" x:Name="Pause" Height="50" Width="60" Focusable="False" Background="Transparent" Foreground="White" Canvas.Left="240" Canvas.Top="10" RenderTransformOrigin="-1.12,0.948">Pause</Button>
+        <Button Click="WhenButtonClick" x:Name="Pause" Height="50" Width="60" Focusable="False" Background="Transparent" Foreground="White" Canvas.Left="130" Canvas.Top="10" RenderTransformOrigin="-1.12,0.948">Pause</Button>
         <Label Name="Scoretext" Content="score: 0" FontSize="18" FontWeight="Bold" Foreground="White"/>
         <Label Name="Damagetext" Content="score: 0" FontSize="18" FontWeight="Bold" Foreground="White" Canvas.Left="391"/>
+        <Button  x:Name="Quit" Height="50" Width="60" Focusable="False" Background="Transparent" Foreground="White" Canvas.Left="301" Canvas.Top="10" RenderTransformOrigin="-1.12,0.948" Content="Quit" Click="Quit_Click"/>
 
 
     </Canvas>

@@ -10,8 +10,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
 using System.Windows.Threading;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace project_p1
 {
@@ -23,6 +24,8 @@ namespace project_p1
         DispatcherTimer Gametimer = new DispatcherTimer();
         bool MoveLeft, MoveRight;
         List<Rectangle> ItemRemover = new List<Rectangle>();
+        const string ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\NHL First year Periode 1\\programmeren\\arcade\\arcade 4.0\\project p1\\project p1\\DataBase\\GameDatabase.mdf;Integrated Security=True";
+        
 
         Random Ran = new Random();
 
@@ -30,7 +33,7 @@ namespace project_p1
         int EnemyCounter = 100;
         int PlayerSpeed = 10;
         int Limit = 50;
-        int Score = 0;
+       public int Score = 0;
         int Damage = 0;
         int EnemySpeed = 10;
         bool PauseOnOff = true;
@@ -58,24 +61,31 @@ namespace project_p1
             PlayerImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/player.png"));
             Player.Fill = PlayerImage;
 
-
         }
+
+
+
+        private static void CreateCommand(string queryString, string connectionString)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(queryString, connection);
+                command.Connection.Open();
+                command.ExecuteNonQuery();
+            }
+        }
+
+
         private void WhenButtonClick(object sender, RoutedEventArgs e)
         {
 
             if (PauseOnOff == true)
             {
-
                 Gametimer.Stop();
-
-
             }
             if (PauseOnOff == false)
             {
-
                 Gametimer.Start();
-
-
             }
             if (PauseOnOff == true)
             {
@@ -185,15 +195,19 @@ namespace project_p1
 
             if (Damage > 99)
             {
+                PlayerData playerData = new PlayerData();
+                CreateCommand("INSERT INTO [Game1player] ([playerName],[HighScore]) VALUES ('" + (string)playerData.PlayerName1.Text + "','" + Score + "')", ConnectionString);
+
                 Gametimer.Stop();
                 Damagetext.Content = "damage: 100";
                 Damagetext.Foreground = Brushes.Red;
-                MessageBox.Show("Captain, You have Destroyed " + Score + " Alien ships!" + Environment.NewLine + "pres OK to play again!");
-
+                PlayAgainMenu playAgainMenu = new PlayAgainMenu();
+                this.Visibility = Visibility.Hidden;
+                playAgainMenu.ScoreGot.Content += Convert.ToString(Score);
+                playAgainMenu.Visibility = Visibility.Visible;
                 System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
-                Application.Current.Shutdown();
             }
-
+      
         }
         //knop voor verplaatsing instellen//
         private void OnKeyDown(object sender, KeyEventArgs e)
@@ -236,6 +250,18 @@ namespace project_p1
 
             }
         }
+
+        private void Quit_Click(object sender, RoutedEventArgs e)
+        {
+            PlayerData playerData = new PlayerData();
+            CreateCommand("INSERT INTO [Game1player] ([playerName],[HighScore]) VALUES ('" + (string)playerData.PlayerName1.Text + "','" + Score + "')", ConnectionString);
+
+            Gametimer.Stop();
+            MainWindow mainWindow = new MainWindow();
+            this.Hide();
+            mainWindow.Visibility = Visibility.Visible;
+        }
+
         //enemys generaten//
         private void MakeEnimies()
         {
