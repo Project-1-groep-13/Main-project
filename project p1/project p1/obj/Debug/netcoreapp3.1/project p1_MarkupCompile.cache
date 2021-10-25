@@ -16,5 +16,5 @@ TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 192-1533232326
 Game1Player.xaml;Game2Player.xaml;MainWindow.xaml;
 
-False
+True
 

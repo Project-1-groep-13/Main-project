@@ -47,7 +47,7 @@ namespace project_p2
             Gametimer.Start();
 
             MyCanvas.Focus();
-            //achtergrond//
+            //achtergrond
             ImageBrush background = new ImageBrush();
             background.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/purple.png"));
             background.TileMode = TileMode.Tile;
@@ -55,12 +55,12 @@ namespace project_p2
             background.ViewportUnits = BrushMappingMode.RelativeToBoundingBox;
             MyCanvas.Background = background;
 
-            //player 1 foto//
+            //player 1 foto
             ImageBrush Player1Image = new ImageBrush();
             Player1Image.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/ShipP1.png"));
             Player1.Fill = Player1Image;
 
-            //player 2 foto//
+            //player 2 foto
             ImageBrush Player2Image = new ImageBrush();
             Player2Image.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/ShipP2.png"));
             Player2.Fill = Player2Image;
@@ -129,9 +129,9 @@ namespace project_p2
                 Canvas.SetLeft(Player2, Canvas.GetLeft(Player2) + PlayerSpeed);
             }
 
-            //actual gameplay//
+            //actual gameplay
             foreach (var x in MyCanvas.Children.OfType<Rectangle>())
-            {   //bullet hit op enemy//
+            {   //bullet hit op enemy
                 if (x is Rectangle && (string)x.Tag == "bullet")
                 {
                     Canvas.SetTop(x, Canvas.GetTop(x) - 20);
@@ -159,7 +159,7 @@ namespace project_p2
                 }
 
                 if (x is Rectangle && (string)x.Tag == "enemy")
-                {  //enemy hit op player of bij player langs//
+                {  //enemy hit op player of bij player langs
                     Canvas.SetTop(x, Canvas.GetTop(x) + EnemySpeed);
 
                     if (Canvas.GetTop(x) > 750)
@@ -179,6 +179,21 @@ namespace project_p2
                     {
                         ItemRemover.Add(x);
                         Damage1 += 1;
+                    }
+                }
+
+                // Functie van de powerup
+                if (x is Rectangle && (string)x.Tag == "powerup")
+                {
+                    if (Player1HitBox.IntersectsWith(powerupHitBox) && Damage1 != 0)
+                    {
+                        ItemRemover.Add(x);
+                        Damage1--;
+                    }
+                    if (Player2HitBox.IntersectsWith(powerupHitBox) && Damage2 != 0)
+                    {
+                        ItemRemover.Add(x);
+                        Damage2--;
                     }
                 }
 
@@ -317,7 +332,7 @@ namespace project_p2
 
         }
 
-        //knop voor verplaatsing instellen + bullet spawnen//
+        //knop voor verplaatsing instellen + bullet spawnen
         private void OnKeyUp2(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.A)
@@ -383,6 +398,28 @@ namespace project_p2
             Canvas.SetTop(NewEnemy, -100);
             Canvas.SetLeft(NewEnemy, Ran.Next(30, 430));
             MyCanvas.Children.Add(NewEnemy);
+        }
+
+        /// <summary>
+        /// Powerups Generaten
+        /// </summary>
+        private void MakePowerup()
+        {
+            ImageBrush powerupSprite = new ImageBrush();
+            
+            powerupSprite.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/1.png"));
+
+            Rectangle newPowerup = new Rectangle
+            {
+                Tag = "powerup",
+                Height = 30,
+                Width = 30,
+                Fill = powerupSprite,
+            };
+
+            Canvas.SetTop(newPowerup, -100);
+            Canvas.SetLeft(newPowerup, Ran.Next(30, 430));
+            MyCanvas.Children.Add(newPowerup);
         }
     }
 }
