@@ -37,7 +37,9 @@ namespace project_p1
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            //high score menu
+            this.Close();
+            HighScore highScore = new HighScore();
+            highScore.Visibility = Visibility.Visible;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

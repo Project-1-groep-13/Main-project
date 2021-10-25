@@ -17,7 +17,7 @@ namespace project_p1
     /// </summary>
     public partial class PlayerData : Window
     {
-
+        
 
         public PlayerData()
         {
@@ -26,14 +26,24 @@ namespace project_p1
 
         }
 
+        //Game starts after typing your name
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
             Game1Player game1Player = new Game1Player();
             this.Visibility = Visibility.Hidden;
             game1Player.Visibility = Visibility.Visible;
-            
+            game1Player.player1Name = this.PlayerName1.Text;
 
+
+        }
+
+        
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Visibility = Visibility.Visible;
         }
     }
 }

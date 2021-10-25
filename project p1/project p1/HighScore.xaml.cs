@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 
+
 namespace project_p1
 {
     /// <summary>
@@ -21,7 +22,7 @@ namespace project_p1
     /// </summary>
     public partial class HighScore : Window
     {
-        //Dictionary<string, int> highscores = new Dictionary<string, int>();
+        //Connection String must be chnaged in different branches to match the file path of the device that you are using
         const string ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\NHL First year Periode 1\\programmeren\\arcade\\arcade 4.0\\project p1\\project p1\\DataBase\\GameDatabase.mdf;Integrated Security=True";
 
 
@@ -36,22 +37,24 @@ namespace project_p1
             this.Background = bg;
 
             
-            //setHighScore();
+            
+            
             dtGridView();
-            //getHighScore();
-            //CreateLabels();
+           
 
 
         }
 
-
+        /// <summary>
+        ///getting Data from the database to show in DataGrid
+        /// </summary>
         private void dtGridView()
         {
            
             SqlConnection sqlConnection = new SqlConnection();
             SqlConnection connection = new SqlConnection(ConnectionString);
 
-            SqlCommand cmd = new SqlCommand("Select playerName,HighScore From Game1player",connection);
+            SqlCommand cmd = new SqlCommand("Select top 5 playerName AS Name,HighScore AS Score From Game1player Order By HighScore DESC",connection);
             connection.Open();
             DataTable dt = new DataTable();
             dt.Load(cmd.ExecuteReader());
@@ -59,6 +62,11 @@ namespace project_p1
             dtGrid.DataContext = dt;
         }
 
+        /// <summary>
+        /// Creating a method to perform query on to the databse
+        /// </summary>
+        /// <param name="queryString">type your query here</param>
+        /// <param name="connectionString">Database connection here</param>
         private static void CreateCommand(string queryString, string connectionString)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -78,81 +86,7 @@ namespace project_p1
             mainWindow.Visibility = Visibility.Visible;
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            string query = "INSERT INTO [Game1player] ([playerName],[HighScore],[Date]) VALUES ('wwweee',55,')";
-            CreateCommand(query, ConnectionString);
-        }
-
-        //private void getHighScore()
-        //{
-        //    highscores.Clear();
-        //    string query = "SELECT ([playerName],[HighScore],[Date]) FROM Game1player";
-        //    SqlConnection sqlConnection = new SqlConnection(ConnectionString);
-
-        //    using (SqlConnection connection = new SqlConnection(ConnectionString))
-        //    {
-        //        SqlCommand command = new SqlCommand(query, connection);
-        //        connection.Open();
-        //        SqlDataReader reader = command.ExecuteReader();
-
-        //        // Call Read before accessing data.
-        //        while (reader.Read())
-        //        {
-        //            highscores.Add((string)reader[0], (int)reader[1]);
-        //        }
-
-        //        // Call Close when done reading.
-        //        reader.Close();
-        //    }
-
-        //}
-
-        //private void CreateLabels()
-        //{
-        //    HighScorePanel.Children.Clear();
-        //    var sortedHighScore = from score in highscores orderby score.Value descending select score;
-
-        //    foreach (KeyValuePair<string,int> highscore in sortedHighScore)
-        //    {
-        //        Label label = new Label();
-        //        label.Content = "Player " + highscore.Key + " Scored " + highscore.Value;
-        //        label.HorizontalAlignment = HorizontalAlignment.Center;
-        //        HighScorePanel.Children.Add(label);
-        //    }
-
-        //}
-
-
-
-
-
-        //private void setHighScore()
-        //{
-        //    PlayerData playerData = new PlayerData();
-        //    string player1name = Convert.ToString(playerData.PlayerName1.Text);
-        //    Game1Player game1Player = new Game1Player();
-        //    int score = Convert.ToInt32(game1Player.Score);
-        //    string query = "INSERT INTO [Game1player] ([playerName],[HighScore],[Date]) VALUES ('Test','55')";
-        //    SqlConnection connection = new SqlConnection(ConnectionString);
-        //    SqlCommand command = new SqlCommand();
-        //    try
-        //    {
-        //        command.CommandText = query;
-        //        command.CommandType = CommandType.Text;
-        //        command.Connection = connection;
-        //        connection.Open();
-        //        command.ExecuteNonQuery();
-        //        connection.Close();
-        //    }
-        //    catch (Exception)
-        //    {
-        //        MessageBox.Show("error");
-        //        connection.Close();
-        //    }
-
-        //}
-
-
     }
 }
+
+

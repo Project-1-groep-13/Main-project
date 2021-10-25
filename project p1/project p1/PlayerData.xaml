@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:project_p1"
         mc:Ignorable="d"
-        Title="Enter your name" Height="200" Width="400">
+        Title="Enter your name" Height="220" Width="400">
     <Grid>
         <Image Margin="19,55,337,52" Stretch="Fill" Source="images/ShipP1.png"/>
-        <TextBox x:Name="PlayerName1" HorizontalAlignment="Left" Margin="164,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="120"/>
-        <Label  FontFamily="algerian" Content="Player 1" HorizontalAlignment="Left" Margin="91,0,0,0" VerticalAlignment="Center"/>
-        <Button FontFamily="algerian" Background="Transparent" Content="Play! " HorizontalAlignment="Left" Margin="307,72,0,0" VerticalAlignment="Top" Height="43" Width="71" Click="Button_Click"/>
+        <TextBox x:Name="PlayerName1" HorizontalAlignment="Left" Margin="162,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label  FontFamily="algerian" Content="Player 1" HorizontalAlignment="Left" Margin="89,81,0,0" VerticalAlignment="Top"/>
+        <Button FontFamily="algerian" Background="Transparent" Content="Play! " HorizontalAlignment="Left" Margin="306,0,0,0" VerticalAlignment="Center" Height="43" Width="71" Click="Button_Click"/>
         <Label HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,18,0,0" FontSize="18" FontFamily="Algerian" Content="Enter Your Name!"/>
-
+        <Button Background="Transparent" FontFamily="algerian" Height="20" Margin="154,136,154,28" Content="Close" Click="Button_Click_1"/>
     </Grid>
 </Window>

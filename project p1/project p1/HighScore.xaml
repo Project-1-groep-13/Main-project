@@ -7,34 +7,87 @@
         mc:Ignorable="d"
         Title="HighScore" Height="600" Width="500">
     <Grid>
-        <Label Content="High Score" FontFamily="algerian" FontSize="33" VerticalAlignment="Top" Margin="150,96,126,0" Opacity="2"/>
+        <Label Content="Single Player Mode" FontFamily="algerian" FontSize="33" VerticalAlignment="Top" Margin="66,37,66,0" Opacity="2"/>
         <Button
                 Content="Main Menu"
                 Background="BurlyWood"
                 FontSize="22"
-                FontFamily="algerian" Margin="138,417,138,104" Click="Button_Click"/>
+                FontFamily="algerian" Margin="138,493,138,28" Click="Button_Click"/>
+        <Label Content="Multiplayer Mode" FontFamily="algerian" FontSize="33" VerticalAlignment="Center" Margin="76,0,66,0" Opacity="2" Height="60"/>
+
 
         <DataGrid
         Height="150"
         Width="450" 
-        Margin="25,155,25,279"
+        Margin="25,91,25,343"
         x:Name="dtGrid"
-        ItemsSource="{Binding}">
-         
+        ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+        ScrollViewer.VerticalScrollBarVisibility="Hidden"
+        HeadersVisibility="Column"
+        ColumnHeaderHeight="30"
+        ColumnWidth="205"
+        RowHeight="20"
+        ItemsSource="{Binding}"
+        IsReadOnly="True"
+        GridLinesVisibility="None"
+        VerticalContentAlignment="Center">
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="BurlyWood"></Setter>
+                    <Setter Property="FontWeight" Value="SemiBold"></Setter>
+                    <Setter Property="BorderThickness" Value="0,0,1,2"></Setter>
+                    <Setter Property="HorizontalContentAlignment" Value="Center" />
+                </Style>
+            </DataGrid.Resources>
+
+            <DataGrid.RowStyle>
+
+                <Style TargetType="DataGridRow">
+                    <Setter Property="Background" Value="LightBlue"/>
+                    <Setter Property="BorderBrush" Value="LightBlue"></Setter>
+                    <Setter Property="TextBlock.TextAlignment" Value="Center"></Setter>
+                </Style>
+
+            </DataGrid.RowStyle>
+
+
         </DataGrid>
-        <Button
-            Content="enter data"
-            Background="BurlyWood"
-            FontSize="22"
-            FontFamily="algerian" Margin="138,330,138,191" Click="Button_Click_1"/>
+        <DataGrid
+            Height="150"
+            Width="450" 
+            Margin="25,322,25,112"
+            x:Name="dtGrid_Copy"
+            ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+            ScrollViewer.VerticalScrollBarVisibility="Hidden"
+            HeadersVisibility="Column"
+            ColumnHeaderHeight="30"
+            ColumnWidth="205"
+            RowHeight="20"
+            ItemsSource="{Binding}"
+            IsReadOnly="True"
+            GridLinesVisibility="None"
+            VerticalContentAlignment="Center">
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="BurlyWood"/>
+                    <Setter Property="FontWeight" Value="SemiBold"/>
+                    <Setter Property="BorderThickness" Value="0,0,1,2"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center" />
+                </Style>
+            </DataGrid.Resources>
+
+            <DataGrid.RowStyle>
+
+                <Style TargetType="{x:Type DataGridRow}">
+                    <Setter Property="Background" Value="LightBlue"/>
+                    <Setter Property="BorderBrush" Value="LightBlue"/>
+                    <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+                </Style>
+
+            </DataGrid.RowStyle>
 
 
-        <!--StackPanel 
-            Height="250"
-            Width="400"
-            x:Name="HighScorePanel" Margin="50,150,50,184">
-
-        </StackPanel-->
+        </DataGrid>
 
     </Grid>
 </Window>

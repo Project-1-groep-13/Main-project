@@ -24,8 +24,10 @@ namespace project_p1
         DispatcherTimer Gametimer = new DispatcherTimer();
         bool MoveLeft, MoveRight;
         List<Rectangle> ItemRemover = new List<Rectangle>();
+        //Connection String must be chnaged in different branches to match the file path of the device that you are using
         const string ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\NHL First year Periode 1\\programmeren\\arcade\\arcade 4.0\\project p1\\project p1\\DataBase\\GameDatabase.mdf;Integrated Security=True";
-        
+        PlayerData playerData = new PlayerData();
+
 
         Random Ran = new Random();
 
@@ -37,6 +39,7 @@ namespace project_p1
         int Damage = 0;
         int EnemySpeed = 10;
         bool PauseOnOff = true;
+        public string player1Name;
 
         Rect PlayerHitBox;
 
@@ -61,11 +64,16 @@ namespace project_p1
             PlayerImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/player.png"));
             Player.Fill = PlayerImage;
 
+            
         }
 
 
-
-        private static void CreateCommand(string queryString, string connectionString)
+        /// <summary>
+        /// Creating a method to perform query on to the databse
+        /// </summary>
+        /// <param name="queryString">type your query here</param>
+        /// <param name="connectionString">Database connection here</param>
+        private static void CreateCommand(string queryString , string connectionString)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -75,7 +83,7 @@ namespace project_p1
             }
         }
 
-
+        //pause button while playing
         private void WhenButtonClick(object sender, RoutedEventArgs e)
         {
 
@@ -195,8 +203,7 @@ namespace project_p1
 
             if (Damage > 99)
             {
-                PlayerData playerData = new PlayerData();
-                CreateCommand("INSERT INTO [Game1player] ([playerName],[HighScore]) VALUES ('" + (string)playerData.PlayerName1.Text + "','" + Score + "')", ConnectionString);
+                CreateCommand("INSERT INTO [Game1player] ([playerName],[HighScore]) VALUES ('" + player1Name + "','" + Score + "')", ConnectionString);
 
                 Gametimer.Stop();
                 Damagetext.Content = "damage: 100";
@@ -245,17 +252,15 @@ namespace project_p1
                 };
                 Canvas.SetLeft(NewBullet, Canvas.GetLeft(Player) + Player.Width / 2);
                 Canvas.SetTop(NewBullet, Canvas.GetTop(Player) - NewBullet.Height);
-
                 MyCanvas.Children.Add(NewBullet);
 
             }
         }
-
+        //Quiting the game
         private void Quit_Click(object sender, RoutedEventArgs e)
         {
-            PlayerData playerData = new PlayerData();
-            CreateCommand("INSERT INTO [Game1player] ([playerName],[HighScore]) VALUES ('" + (string)playerData.PlayerName1.Text + "','" + Score + "')", ConnectionString);
-
+            
+            CreateCommand("INSERT INTO [Game1player] ([playerName],[HighScore]) VALUES ('" + player1Name + "','" + Score + "')", ConnectionString);
             Gametimer.Stop();
             MainWindow mainWindow = new MainWindow();
             this.Hide();
