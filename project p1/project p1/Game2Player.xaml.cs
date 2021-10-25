@@ -57,12 +57,12 @@ namespace project_p2
 
             //player 1 foto//
             ImageBrush Player1Image = new ImageBrush();
-            Player1Image.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/player.png"));
+            Player1Image.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/ShipP1.png"));
             Player1.Fill = Player1Image;
 
             //player 2 foto//
             ImageBrush Player2Image = new ImageBrush();
-            Player2Image.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/player.png"));
+            Player2Image.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/ShipP2.png"));
             Player2.Fill = Player2Image;
 
         }
@@ -165,19 +165,20 @@ namespace project_p2
                     if (Canvas.GetTop(x) > 750)
                     {
                         ItemRemover.Add(x);
-                        Damage1 += 10;
+                        Damage1++;
+                        Damage2++;
                     }
                     Rect EnemyHitBox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
 
                     if (Player1HitBox.IntersectsWith(EnemyHitBox))
                     {
                         ItemRemover.Add(x);
-                        Damage1 += 5;
+                        Damage1 += 1;
                     }
                     if (Player2HitBox.IntersectsWith(EnemyHitBox))
                     {
                         ItemRemover.Add(x);
-                        Damage1 += 5;
+                        Damage1 += 1;
                     }
                 }
 
@@ -207,28 +208,27 @@ namespace project_p2
                 EnemySpeed = 12;
             }
 
-            if (Damage1 > 99)//Hier moet ik nog een removal maken waar beide spelers dood moeten zijn voor het game over is
+
+            if (Damage1 >= 5)//Hier moet ik nog een removal maken waar beide spelers dood moeten zijn voor het game over is
             {
                 Gametimer.Stop();
-                Damage1text.Content = "damage: 100";
+                Damage1text.Content = "Lives p1: 0";
                 Damage1text.Foreground = Brushes.Red;
-                MessageBox.Show("Captain, You have Destroyed " + Score + " Alien ships!" + Environment.NewLine + "pres OK to play again!");
-
+                MessageBox.Show("Captain, You have Destroyed " + Score + " Pirate ships!" + Environment.NewLine + "pres OK to play again!");
                 System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
                 Application.Current.Shutdown();
             }
 
-            if (Damage2 > 99)//Hier moet ik nog een removal maken waar beide spelers dood moeten zijn voor het game over is
-            {
-                Gametimer.Stop();
-                Damage2text.Content = "damage: 100";
-                Damage2text.Foreground = Brushes.Red;
-                MessageBox.Show("Captain, You have Destroyed " + Score + " Alien ships!" + Environment.NewLine + "pres OK to play again!");
+            if (Damage2 >= 5)//Hier moet ik nog een removal maken waar beide spelers dood moeten zijn voor het game over is
+                {
+                    Gametimer.Stop();
+                    Damage2text.Content = "Lives p2: 0";
+                    Damage2text.Foreground = Brushes.Red;
+                    MessageBox.Show("Captain, You have Destroyed " + Score + " Pirate ships!" + Environment.NewLine + "pres OK to play again!");
 
-                System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
-                Application.Current.Shutdown();
-            }
-
+                    System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+                    Application.Current.Shutdown();
+                }
         }
         //knop voor verplaatsing instellen//
         private void OnKeyDown(object sender, KeyEventArgs e)
@@ -251,7 +251,7 @@ namespace project_p2
             }
 
         }
-        //knop voor verplaatsing instellen + bullet spawnen//
+        //knop voor verplaatsing instellen + bullet spawnen
         private void OnKeyUp(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Left)
@@ -303,7 +303,7 @@ namespace project_p2
 
         }
 
-        //knop voor verplaatsing instellen//
+        //knop voor verplaatsing instellen
         private void OnKeyDown2(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.A)
