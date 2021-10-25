@@ -1,0 +1,17 @@
+﻿<Window x:Class="project_p1.EasyMode"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:project_p1"
+        mc:Ignorable="d"
+        Title="Easy Mode" Height="615" Width="540">
+    <Canvas Name="MyCanvass" Focusable="True" Background="black" KeyDown="OnKeyDown" KeyUp="OnKeyUp">
+
+        <Rectangle x:Name="Player" Height="50" Width="60" Fill="yellow" Canvas.Left="240" Canvas.Top="500"/>
+        <Button x:Name="Pause" Height="50" Width="60" Focusable="False" Background="Transparent" Foreground="White" Canvas.Left="133" Canvas.Top="17" RenderTransformOrigin="-1.12,0.948" Click="Pause_Click">Pause</Button>
+        <Label Name="Scoretext" Content="score: 0" FontSize="18" FontWeight="Bold" Foreground="White"/>
+        <Label Name="Damagetext" Content="score: 0" FontSize="18" FontWeight="Bold" Foreground="White" Canvas.Left="391"/>
+        <Button x:Name="Quit" Height="50" Width="60" Focusable="False" Background="Transparent" Foreground="White" Canvas.Left="293" Canvas.Top="17" RenderTransformOrigin="-1.12,0.948" Click="Quit_Click" Content="Quit"/>
+    </Canvas>
+</Window>
