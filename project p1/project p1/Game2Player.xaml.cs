@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 using System.Windows.Threading;
+using project_p1;
 
 namespace project_p2
 {
@@ -57,12 +58,12 @@ namespace project_p2
 
             //player 1 foto//
             ImageBrush Player1Image = new ImageBrush();
-            Player1Image.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/ShipP1.png"));
+            Player1Image.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/1.png"));
             Player1.Fill = Player1Image;
 
             //player 2 foto//
             ImageBrush Player2Image = new ImageBrush();
-            Player2Image.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/ShipP2.png"));
+            Player2Image.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/2.png"));
             Player2.Fill = Player2Image;
 
         }
@@ -301,6 +302,15 @@ namespace project_p2
                 MyCanvas.Children.Add(NewBullet);
             }
 
+        }
+
+        private void Quit_Click(object sender, RoutedEventArgs e)
+        {
+            Gametimer.Stop();
+            MainWindow mainWindow = new MainWindow();
+            this.Close();
+            mainWindow.Visibility = Visibility.Visible;
+            
         }
 
         //knop voor verplaatsing instellen
