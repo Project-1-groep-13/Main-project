@@ -10,8 +10,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
 using System.Windows.Threading;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace project_p1
 {
@@ -23,6 +24,10 @@ namespace project_p1
         DispatcherTimer Gametimer = new DispatcherTimer();
         bool MoveLeft, MoveRight;
         List<Rectangle> ItemRemover = new List<Rectangle>();
+        //Connection String must be chnaged in different branches to match the file path of the device that you are using
+        const string ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\NHL First year Periode 1\\programmeren\\arcade\\arcade 4.0\\project p1\\project p1\\DataBase\\GameDatabase.mdf;Integrated Security=True";
+        PlayerData playerData = new PlayerData();
+
 
         Random Ran = new Random();
 
@@ -30,10 +35,11 @@ namespace project_p1
         int EnemyCounter = 100;
         int PlayerSpeed = 10;
         int Limit = 50;
-        int Score = 0;
+       public int Score = 0;
         int Damage = 0;
         int EnemySpeed = 10;
         bool PauseOnOff = true;
+        public string player1Name;
 
         Rect PlayerHitBox;
 
@@ -58,24 +64,36 @@ namespace project_p1
             PlayerImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/player.png"));
             Player.Fill = PlayerImage;
 
-
+            
         }
+
+
+        /// <summary>
+        /// Creating a method to perform query on to the databse
+        /// </summary>
+        /// <param name="queryString">type your query here</param>
+        /// <param name="connectionString">Database connection here</param>
+        private static void CreateCommand(string queryString , string connectionString)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(queryString, connection);
+                command.Connection.Open();
+                command.ExecuteNonQuery();
+            }
+        }
+
+        //pause button while playing
         private void WhenButtonClick(object sender, RoutedEventArgs e)
         {
 
             if (PauseOnOff == true)
             {
-
                 Gametimer.Stop();
-
-
             }
             if (PauseOnOff == false)
             {
-
                 Gametimer.Start();
-
-
             }
             if (PauseOnOff == true)
             {
@@ -185,15 +203,18 @@ namespace project_p1
 
             if (Damage > 99)
             {
+                CreateCommand("INSERT INTO [Game1player] ([playerName],[HighScore]) VALUES ('" + player1Name + "','" + Score + "')", ConnectionString);
+
                 Gametimer.Stop();
                 Damagetext.Content = "damage: 100";
                 Damagetext.Foreground = Brushes.Red;
-                MessageBox.Show("Captain, You have Destroyed " + Score + " Alien ships!" + Environment.NewLine + "pres OK to play again!");
-
+                PlayAgainMenu playAgainMenu = new PlayAgainMenu();
+                this.Visibility = Visibility.Hidden;
+                playAgainMenu.ScoreGot.Content += Convert.ToString(Score);
+                playAgainMenu.Visibility = Visibility.Visible;
                 System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
-                Application.Current.Shutdown();
             }
-
+      
         }
         //knop voor verplaatsing instellen//
         private void OnKeyDown(object sender, KeyEventArgs e)
@@ -231,11 +252,21 @@ namespace project_p1
                 };
                 Canvas.SetLeft(NewBullet, Canvas.GetLeft(Player) + Player.Width / 2);
                 Canvas.SetTop(NewBullet, Canvas.GetTop(Player) - NewBullet.Height);
-
                 MyCanvas.Children.Add(NewBullet);
 
             }
         }
+        //Quiting the game
+        private void Quit_Click(object sender, RoutedEventArgs e)
+        {
+            
+            CreateCommand("INSERT INTO [Game1player] ([playerName],[HighScore]) VALUES ('" + player1Name + "','" + Score + "')", ConnectionString);
+            Gametimer.Stop();
+            MainWindow mainWindow = new MainWindow();
+            this.Hide();
+            mainWindow.Visibility = Visibility.Visible;
+        }
+
         //enemys generaten//
         private void MakeEnimies()
         {
