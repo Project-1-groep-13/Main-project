@@ -12,8 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 using System.Windows.Threading;
-using System.Data.SqlClient;
-using System.Data;
+using project_p2;
 
 namespace project_p1
 {
@@ -36,24 +35,25 @@ namespace project_p1
 
         private void Start1Player_Click(object sender, RoutedEventArgs e)
         {
-            PlayerData playerData = new PlayerData();
-            this.Visibility = Visibility.Hidden;
-            playerData.Visibility = Visibility.Visible;
+            Game1Player game1Player = new Game1Player();
+            MainWindow hoofdmenu = new MainWindow();
+            hoofdmenu.Visibility = Visibility.Hidden;
+            game1Player.Visibility = Visibility.Visible;
 
         }
 
         private void Start2Player_Click(object sender, RoutedEventArgs e)
         {
+            Game2Player game2Player = new Game2Player();
             MainWindow hoofdmenu = new MainWindow();
             hoofdmenu.Visibility = Visibility.Hidden;
-
+            game2Player.Visibility = Visibility.Visible;
         }
 
         private void Highscore_Click(object sender, RoutedEventArgs e)
         {
-            HighScore highScore = new HighScore();
-            this.Hide();
-            highScore.Visibility = Visibility.Visible;    
+            MainWindow hoofdmenu = new MainWindow();
+            hoofdmenu.Visibility = Visibility.Hidden;
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)
@@ -64,7 +64,7 @@ namespace project_p1
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             EasyMode easyMode = new EasyMode();
-            this.Hide();
+            this.Close();
             easyMode.Visibility = Visibility.Visible;
         }
     }
