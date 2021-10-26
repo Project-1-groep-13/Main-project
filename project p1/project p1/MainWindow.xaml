@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:project_p1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="615" Width="615">
+        Title="MainWindow" Height="800" Width="950">
 
     <Grid Name="Hoofdmenu">
         <Grid.RowDefinitions>
@@ -20,10 +20,44 @@
             <Image Grid.Column="1" Grid.Row="1" Source="pack://application:,,,/images/treasure map.jpg"></Image>
 
             <StackPanel>
-                <Button Click="Start1Player_Click" Height="90" x:Name="Start1Player" Background="Transparent" FontSize="20" FontFamily="Arial" FontStyle="Italic">Start 1 Player</Button>
-                <Button Click="Start2Player_Click" Height="90" x:Name="Start2Player" Background="Transparent" FontSize="20" FontFamily="Arial" FontStyle="Italic">Start 2 Players</Button>
-                <Button Click="Highscore_Click" Height="90" x:Name="Highscore" Background="Transparent" FontSize="20" FontFamily="Arial" FontStyle="Italic">Highscore</Button>
-                <Button Click="Exit_Click" Height="90" x:Name="Exit" Background="Transparent" FontSize="20" FontFamily="Arial" FontStyle="Italic">Exit</Button>
+                <Button
+                Height="90"
+                Background="Transparent"
+                FontSize="20"
+                FontFamily="Arial"
+                FontStyle="Italic" Click="Button_Click"
+                >Easy Mode
+                </Button>
+                <Button 
+                Click="Start1Player_Click" 
+                    Height="90" 
+                    x:Name="Start1Player" 
+                    Background="Transparent"
+                    FontSize="20" 
+                    FontFamily="Arial" 
+                    FontStyle="Italic">Start 1 Player</Button>
+                <Button 
+                    Click="Start2Player_Click" 
+                    Height="90" 
+                    x:Name="Start2Player" 
+                    Background="Transparent" 
+                    FontSize="20" 
+                    FontFamily="Arial" 
+                    FontStyle="Italic">Start 2 Players</Button>
+                <Button 
+                    Click="Highscore_Click" 
+                    Height="90" x:Name="Highscore" 
+                    Background="Transparent" 
+                    FontSize="20" 
+                    FontFamily="Arial" 
+                    FontStyle="Italic">Highscore</Button>
+                <Button Click="Exit_Click" 
+                    Height="90" 
+                    x:Name="Exit" 
+                    Background="Transparent" 
+                    FontSize="20"
+                    FontFamily="Arial" 
+                    FontStyle="Italic">Exit</Button>
             </StackPanel>
         </Grid>
 
