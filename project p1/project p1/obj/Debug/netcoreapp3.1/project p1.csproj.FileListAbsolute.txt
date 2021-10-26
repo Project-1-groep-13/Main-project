@@ -105,3 +105,40 @@ E:\NHL First year Periode 1\programmeren\arcade\arcade 4.0\project p1\project p1
 E:\NHL First year Periode 1\programmeren\arcade\arcade 4.0\project p1\project p1\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 E:\NHL First year Periode 1\programmeren\arcade\arcade 4.0\project p1\project p1\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 E:\NHL First year Periode 1\programmeren\arcade\arcade 4.0\project p1\project p1\obj\Debug\netcoreapp3.1\project p1.csproj.CopyComplete
+C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\bin\Debug\netcoreapp3.1\project p1.exe
+C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\bin\Debug\netcoreapp3.1\project p1.deps.json
+C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\bin\Debug\netcoreapp3.1\project p1.runtimeconfig.json
+C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\bin\Debug\netcoreapp3.1\project p1.runtimeconfig.dev.json
+C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\bin\Debug\netcoreapp3.1\project p1.dll
+C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\bin\Debug\netcoreapp3.1\project p1.pdb
+C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\project p1.csproj.AssemblyReference.cache
+C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\EasyMode.g.cs
+C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\Game1Player.g.cs
+C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\HighScore.g.cs
+C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\PlayAgainMenu.g.cs
+C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\PlayerData.g.cs
+C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\project p1_MarkupCompile.cache
+C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\project p1_MarkupCompile.lref
+C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\EasyMode.baml
+C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\Game1Player.baml
+C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\HighScore.baml
+C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\PlayAgainMenu.baml
+C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\PlayerData.baml
+C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\project p1.g.resources
+C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\project p1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\project p1.AssemblyInfoInputs.cache
+C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\project p1.AssemblyInfo.cs
+C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\project p1.csproj.CoreCompileInputs.cache
+C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\project p1.csproj.CopyComplete
+C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\project p1.dll
+C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\project p1.pdb
+C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\project p1.genruntimeconfig.cache
