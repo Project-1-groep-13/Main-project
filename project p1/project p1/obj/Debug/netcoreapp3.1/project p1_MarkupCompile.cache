@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 \\Mac\Home\Documents\School\HBO ICT\Module 1\Arcade Game\Main-project\project p1\project p1\App.xaml
-31856035946
+71614339221
 
-5392158412
-192-1533232326
-Game1Player.xaml;Game2Player.xaml;MainWindow.xaml;
+9-1084320666
+193-1093935328
+EasyMode.xaml;Game1Player.xaml;Game2Player.xaml;HighScore.xaml;MainWindow.xaml;PlayAgainMenu.xaml;PlayerData.xaml;
 
 False
 
