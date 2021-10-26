@@ -27,11 +27,10 @@ namespace project_p1
             InitializeComponent();
 
             ImageBrush bg = new ImageBrush();
-            bg.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/purple.png"));
-            bg.TileMode = TileMode.Tile;
-            bg.Viewport = new Rect(0, 0, 0.15, 0.15);
-            bg.ViewportUnits = BrushMappingMode.RelativeToBoundingBox;
+            bg.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/backgroundfoto.jpg"));
             Hoofdmenu.Background = bg;
+            Grid grid = new Grid();
+            grid.Background = bg;
 
         }
 

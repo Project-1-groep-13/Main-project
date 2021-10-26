@@ -13,6 +13,7 @@
     <None Remove="images\3.png" />
     <None Remove="images\4.png" />
     <None Remove="images\5.png" />
+    <None Remove="images\backgroundfoto.jpg" />
     <None Remove="images\player.png" />
     <None Remove="images\purple.png" />
     <None Remove="images\ShipP1.png" />
@@ -30,6 +31,7 @@
     <Resource Include="images\3.png" />
     <Resource Include="images\4.png" />
     <Resource Include="images\5.png" />
+    <Resource Include="images\backgroundfoto.jpg" />
     <Resource Include="images\player.png" />
     <Resource Include="images\purple.png" />
     <Resource Include="images\ShipP1.png" />
