@@ -61,7 +61,7 @@ namespace project_p1 {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/project p1;component/playerdata.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/project p1;V1.0.0.0;component/playerdata.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\PlayerData.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
