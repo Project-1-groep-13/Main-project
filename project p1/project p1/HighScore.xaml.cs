@@ -62,6 +62,8 @@ namespace project_p1
             dtGrid.DataContext = dt;
         }
 
+
+
         /// <summary>
         /// Creating a method to perform query on to the databse
         /// </summary>
