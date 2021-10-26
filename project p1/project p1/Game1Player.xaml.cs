@@ -63,8 +63,7 @@ namespace project_p1
             ImageBrush PlayerImage = new ImageBrush();
             PlayerImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/player.png"));
             Player.Fill = PlayerImage;
-
-            
+                        
         }
 
 
@@ -232,6 +231,8 @@ namespace project_p1
         //knop voor verplaatsing instellen + bullet spawnen//
         private void OnKeyUp(object sender, KeyEventArgs e)
         {
+
+
             if (e.Key == Key.Left)
             {
                 MoveLeft = false;
@@ -242,13 +243,15 @@ namespace project_p1
             }
             if (e.Key == Key.Space)
             {
+                ImageBrush bullet = new ImageBrush();
+                bullet.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/kannonskogel.png"));
+
                 Rectangle NewBullet = new Rectangle
                 {
                     Tag = "bullet",
-                    Height = 20,
-                    Width = 5,
-                    Fill = Brushes.White,
-                    Stroke = Brushes.Red,
+                    Height = 10,
+                    Width = 10,
+                    Fill = bullet,
                 };
                 Canvas.SetLeft(NewBullet, Canvas.GetLeft(Player) + Player.Width / 2);
                 Canvas.SetTop(NewBullet, Canvas.GetTop(Player) - NewBullet.Height);
@@ -292,6 +295,7 @@ namespace project_p1
                     break;
 
             }
+
 
             Rectangle NewEnemy = new Rectangle
             {
