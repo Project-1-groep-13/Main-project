@@ -244,14 +244,14 @@ namespace project_p1
             if (e.Key == Key.Space)
             {
                 ImageBrush bullet = new ImageBrush();
-                bullet.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/kannonskogel.png"));
+                bullet.ImageSource = new BitmapImage(new Uri("C:/Users/psv15/OneDrive/Documenten/GitHub/Main-project/project p1/project p1/images/kannonskogel.png"));
 
                 Rectangle NewBullet = new Rectangle
                 {
                     Tag = "bullet",
                     Height = 10,
                     Width = 10,
-                    Fill = bullet,
+                    Fill = bullet
                 };
                 Canvas.SetLeft(NewBullet, Canvas.GetLeft(Player) + Player.Width / 2);
                 Canvas.SetTop(NewBullet, Canvas.GetTop(Player) - NewBullet.Height);
