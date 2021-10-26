@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\
+\\Mac\Home\Documents\School\HBO ICT\Module 1\Arcade Game\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\
 project_p1
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
-C:\Users\Hajan\OneDrive - NHL Stenden\Documenten\GitHub\Main-project\project p1\project p1\App.xaml
-6-757571535
+\\Mac\Home\Documents\School\HBO ICT\Module 1\Arcade Game\Main-project\project p1\project p1\App.xaml
+71614339221
 
-10-574031295
-193900195145
-EasyMode.xaml;Game1Player.xaml;HighScore.xaml;MainWindow.xaml;PlayAgainMenu.xaml;PlayerData.xaml;
+11-1915230173
+193-1093935328
+EasyMode.xaml;Game1Player.xaml;Game2Player.xaml;HighScore.xaml;MainWindow.xaml;PlayAgainMenu.xaml;PlayerData.xaml;
 
-True
+False
 

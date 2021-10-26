@@ -58,4 +58,3 @@ C:\Users\Chris\OneDrive\Documenten\GitHub\Chrispasma\project p1\project p1\obj\D
 \\Mac\Home\Documents\School\HBO ICT\Module 1\Arcade Game\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\HighScore.baml
 \\Mac\Home\Documents\School\HBO ICT\Module 1\Arcade Game\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\PlayAgainMenu.baml
 \\Mac\Home\Documents\School\HBO ICT\Module 1\Arcade Game\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\PlayerData.baml
-\\Mac\Home\Documents\School\HBO ICT\Module 1\Arcade Game\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\project p1.csproj.CopyComplete

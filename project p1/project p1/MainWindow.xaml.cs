@@ -60,6 +60,13 @@ namespace project_p1
         {
             Application.Current.Shutdown();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            EasyMode easyMode = new EasyMode();
+            this.Close();
+            easyMode.Visibility = Visibility.Visible;
+        }
     }
 }
 
