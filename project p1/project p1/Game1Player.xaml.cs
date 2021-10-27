@@ -61,7 +61,7 @@ namespace project_p1
 
             //player foto//
             ImageBrush PlayerImage = new ImageBrush();
-            PlayerImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/player.png"));
+            PlayerImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/playerimage/P1_5.png"));
             Player.Fill = PlayerImage;
 
             

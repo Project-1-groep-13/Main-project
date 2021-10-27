@@ -19,6 +19,20 @@
     <None Remove="images\ShipP1.png" />
     <None Remove="images\ShipP2.png" />
     <None Remove="images\treasure map.jpg" />
+    <None Remove="playerimage\P1_1.png" />
+    <None Remove="playerimage\P1_2.png" />
+    <None Remove="playerimage\P1_3.png" />
+    <None Remove="playerimage\P1_4.png" />
+    <None Remove="playerimage\P1_5.png" />
+    <None Remove="playerimage\P2_1.png" />
+    <None Remove="playerimage\P2_2.png" />
+    <None Remove="playerimage\P2_3.png" />
+    <None Remove="playerimage\P2_4.png" />
+    <None Remove="playerimage\P2_5.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="playerimage\P2_3.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -37,6 +51,15 @@
     <Resource Include="images\ShipP1.png" />
     <Resource Include="images\ShipP2.png" />
     <Resource Include="images\treasure map.jpg" />
+    <Resource Include="playerimage\P1_1.png" />
+    <Resource Include="playerimage\P1_2.png" />
+    <Resource Include="playerimage\P1_3.png" />
+    <Resource Include="playerimage\P1_4.png" />
+    <Resource Include="playerimage\P1_5.png" />
+    <Resource Include="playerimage\P2_1.png" />
+    <Resource Include="playerimage\P2_2.png" />
+    <Resource Include="playerimage\P2_4.png" />
+    <Resource Include="playerimage\P2_5.png" />
   </ItemGroup>
 
   <ItemGroup>
