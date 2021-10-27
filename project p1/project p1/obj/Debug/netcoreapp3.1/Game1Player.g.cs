@@ -101,7 +101,7 @@ namespace project_p1 {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/project p1_tyodezmv_wpftmp;component/game1player.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/project p1;component/game1player.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Game1Player.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

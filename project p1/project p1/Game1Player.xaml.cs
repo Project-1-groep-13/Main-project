@@ -256,13 +256,15 @@ namespace project_p1
             }
             if (e.Key == Key.Space)
             {
+                ImageBrush bullet = new ImageBrush();
+                bullet.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/kannonskogel.png"));
                 Rectangle NewBullet = new Rectangle
                 {
                     Tag = "bullet",
-                    Height = 20,
+                    Height = 5,
                     Width = 5,
-                    Fill = Brushes.White,
-                    Stroke = Brushes.Red,
+                    Fill = bullet,
+                    
                 };
                 Canvas.SetLeft(NewBullet, Canvas.GetLeft(Player) + Player.Width / 2);
                 Canvas.SetTop(NewBullet, Canvas.GetTop(Player) - NewBullet.Height);

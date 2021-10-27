@@ -328,13 +328,15 @@ namespace project_p2
             }
             if (e.Key == Key.Space)
             {
+                ImageBrush bullet = new ImageBrush();
+                bullet.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/kannonskogel.png"));
                 Rectangle NewBullet = new Rectangle
                 {
                     Tag = "bullet",
-                    Height = 20,
+                    Height = 5,
                     Width = 5,
-                    Fill = Brushes.White,
-                    Stroke = Brushes.Red,
+                    Fill = bullet,
+                    
                 };
                 Canvas.SetLeft(NewBullet, Canvas.GetLeft(Player1) + Player1.Width / 2);
                 Canvas.SetTop(NewBullet, Canvas.GetTop(Player1) - NewBullet.Height);
@@ -351,13 +353,15 @@ namespace project_p2
             }
             if (e.Key == Key.W)
             {
+                ImageBrush bullet = new ImageBrush();
+                bullet.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/kannonskogel.png"));
                 Rectangle NewBullet = new Rectangle
                 {
                     Tag = "bullet",
-                    Height = 20,
+                    Height = 5,
                     Width = 5,
-                    Fill = Brushes.White,
-                    Stroke = Brushes.Red,
+                    Fill = bullet,
+                   
                 };
                 Canvas.SetLeft(NewBullet, Canvas.GetLeft(Player2) + Player2.Width / 2);
                 Canvas.SetTop(NewBullet, Canvas.GetTop(Player2) - NewBullet.Height);

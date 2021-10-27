@@ -228,7 +228,7 @@ namespace project_p1
                 Rectangle NewBullet = new Rectangle
                 {                  
                     Tag = "bullet",
-                    Height = 20,
+                    Height = 5,
                     Width = 5,
                     Fill = bullet,
                     
