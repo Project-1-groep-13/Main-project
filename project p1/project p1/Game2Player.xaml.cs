@@ -13,6 +13,7 @@ using System.Windows.Shapes;
 
 using System.Windows.Threading;
 using project_p1;
+using System.Data.SqlClient;
 
 namespace project_p2
 {
@@ -24,6 +25,8 @@ namespace project_p2
         DispatcherTimer Gametimer = new DispatcherTimer();
         bool MoveLeft1, MoveRight1, MoveLeft2, MoveRight2;
         List<Rectangle> ItemRemover = new List<Rectangle>();
+        const string ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Hajan\\OneDrive - NHL Stenden\\Documenten\\GitHub\\Main-project\\project p1\\project p1\\DataBase\\GameDatabase.mdf;Integrated Security = True";
+
 
         Random Ran = new Random();
 
@@ -32,10 +35,11 @@ namespace project_p2
         int PlayerSpeed = 10;
         int Limit = 50;
         int Score = 0;
-        int Damage1 = 0;
-        int Damage2 = 0;
+        int Damage1 = 5;
+        int Damage2 = 5;
         int EnemySpeed = 10;
         bool PauseOnOff = true;
+        public string player1name, player2name;
 
         Rect Player1HitBox;
         Rect Player2HitBox;
@@ -67,22 +71,26 @@ namespace project_p2
             Player2.Fill = Player2Image;
 
         }
+
+        private static void CreateCommand(string queryString, string connectionString)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(queryString, connection);
+                command.Connection.Open();
+                command.ExecuteNonQuery();
+            }
+        }
         private void WhenButtonClick(object sender, RoutedEventArgs e)
         {
-
             if (PauseOnOff == true)
             {
 
                 Gametimer.Stop();
-
-
             }
             if (PauseOnOff == false)
             {
-
                 Gametimer.Start();
-
-
             }
             if (PauseOnOff == true)
             {
@@ -102,8 +110,8 @@ namespace project_p2
             EnemyCounter -= 1;
             //score setting//
             Scoretext.Content = "score: " + Score;
-            Damage1text.Content = "Damage1: " + Damage1;
-            Damage2text.Content = "Damage2: " + Damage2;
+            Damage1text.Content = "Levens: " + Damage1;
+            Damage2text.Content = "Levens: " + Damage2;
             //enemy spawning//
             if (EnemyCounter < 0)
             {
@@ -166,20 +174,20 @@ namespace project_p2
                     if (Canvas.GetTop(x) > 750)
                     {
                         ItemRemover.Add(x);
-                        Damage1++;
-                        Damage2++;
+                        Damage1-=1;
+                        Damage2-=1;
                     }
                     Rect EnemyHitBox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
 
                     if (Player1HitBox.IntersectsWith(EnemyHitBox))
                     {
                         ItemRemover.Add(x);
-                        Damage1 += 1;
+                        Damage1 -= 1;
                     }
                     if (Player2HitBox.IntersectsWith(EnemyHitBox))
                     {
                         ItemRemover.Add(x);
-                        Damage1 += 1;
+                        Damage2 -= 1;
                     }
                 }
 
@@ -197,7 +205,7 @@ namespace project_p2
                 EnemySpeed = 20;
             }
             */
-
+            #region EVENTS AND SCORE LIMITS
             if (Score > 10)
             {
                 Limit = 20;
@@ -208,28 +216,37 @@ namespace project_p2
                 Limit = 20;
                 EnemySpeed = 12;
             }
-
-
-            if (Damage1 >= 5)//Hier moet ik nog een removal maken waar beide spelers dood moeten zijn voor het game over is
+            if (Damage1>0 && Damage2<0)
             {
-                Gametimer.Stop();
-                Damage1text.Content = "Lives p1: 0";
-                Damage1text.Foreground = Brushes.Red;
-                MessageBox.Show("Captain, You have Destroyed " + Score + " Pirate ships!" + Environment.NewLine + "pres OK to play again!");
-                System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
-                Application.Current.Shutdown();
+               Damage2 = 0;
+               MyCanvas.Children.Remove(Player2);
             }
+            if (Damage2>0 && Damage1<0)
+            {
+                Damage1 = 0;
+                MyCanvas.Children.Remove(Player1);
+            }
+            if (Damage1==0 && Damage2==0)
+            {
+                Damage2 = 0;
+                Damage1 = 0;
+            }
+            if (Damage1 <0 && Damage2<0)
+            {
+                CreateCommand("INSERT INTO [Game2player] ([playerName1],[playerName2],[HighScore]) VALUES ('" + player1name + "','" + player2name + "','" + Score + "')", ConnectionString);
+                Gametimer.Stop();
+                Damage1text.Content = "Lives p1 : 0";
+                Damage1text.Foreground = Brushes.Red;
+                Damage2text.Content = "Lives p2 : 0";
+                Damage2text.Foreground = Brushes.Red;
+                pAgain2player pAgain2 = new pAgain2player();
+                pAgain2.Visibility = Visibility.Visible;
+                pAgain2.ScoreGot.Content = Convert.ToString(Score);
+                this.Close();
+            }
+            #endregion
 
-            if (Damage2 >= 5)//Hier moet ik nog een removal maken waar beide spelers dood moeten zijn voor het game over is
-                {
-                    Gametimer.Stop();
-                    Damage2text.Content = "Lives p2: 0";
-                    Damage2text.Foreground = Brushes.Red;
-                    MessageBox.Show("Captain, You have Destroyed " + Score + " Pirate ships!" + Environment.NewLine + "pres OK to play again!");
-
-                    System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
-                    Application.Current.Shutdown();
-                }
+           
         }
         //knop voor verplaatsing instellen//
         private void OnKeyDown(object sender, KeyEventArgs e)
@@ -306,6 +323,8 @@ namespace project_p2
 
         private void Quit_Click(object sender, RoutedEventArgs e)
         {
+            CreateCommand("INSERT INTO [Game2player] ([playerName1],[playerName2],[HighScore]) VALUES ('" + player1name + "','" + player2name + "','" + Score + "')", ConnectionString);
+
             Gametimer.Stop();
             MainWindow mainWindow = new MainWindow();
             this.Close();

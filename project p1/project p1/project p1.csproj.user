@@ -10,6 +10,15 @@
     <Compile Update="Game1Player.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="pAgain1player.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="pAgain2player.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PlayerData2.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Game2Player.xaml">
@@ -19,6 +28,15 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="pAgain1player.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="pAgain2player.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PlayerData2.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
