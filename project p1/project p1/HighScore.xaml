@@ -61,7 +61,7 @@
             ScrollViewer.VerticalScrollBarVisibility="Hidden"
             HeadersVisibility="Column"
             ColumnHeaderHeight="30"
-            ColumnWidth="205"
+            ColumnWidth="150"
             RowHeight="20"
             ItemsSource="{Binding}"
             IsReadOnly="True"
@@ -77,13 +77,11 @@
             </DataGrid.Resources>
 
             <DataGrid.RowStyle>
-
                 <Style TargetType="{x:Type DataGridRow}">
                     <Setter Property="Background" Value="LightBlue"/>
                     <Setter Property="BorderBrush" Value="LightBlue"/>
                     <Setter Property="TextBlock.TextAlignment" Value="Center"/>
                 </Style>
-
             </DataGrid.RowStyle>
 
 

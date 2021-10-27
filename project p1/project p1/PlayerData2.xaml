@@ -1,0 +1,23 @@
+﻿<Window x:Class="project_p1.PlayerData2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:project_p1"
+        mc:Ignorable="d"
+        Title="Enter your name" Height="320" Width="450">
+    <Grid>
+        <Grid>
+            <Image Margin="19,46,381,170" Stretch="Fill" Source="images/ShipP1.png"/>
+            <Image Margin="20,140,381,72" Stretch="Fill" Source="images/ShipP2.png"/>
+
+            <TextBox x:Name="PlayerName1" HorizontalAlignment="Left" Margin="192,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label  FontFamily="algerian" Content="Player 1" HorizontalAlignment="Left" Margin="90,72,0,0" VerticalAlignment="Top"/>
+            <Button FontFamily="algerian" Background="Transparent" Content="Play! " HorizontalAlignment="Left" Margin="329,115,0,0" VerticalAlignment="Top" Height="43" Width="96" Click="Button_Click"/>
+            <Label HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,18,0,0" FontSize="18" FontFamily="Algerian" Content="Enter Your Name!"/>
+            <Button Background="Transparent" FontFamily="algerian" Margin="154,239,154,23" Content="Close" Click="Button_Click_1"/>
+            <TextBox x:Name="PlayerName2" HorizontalAlignment="Left" Margin="192,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label  FontFamily="algerian" Content="Player 2" HorizontalAlignment="Left" Margin="89,171,0,0" VerticalAlignment="Top"/>
+        </Grid>
+    </Grid>
+</Window>

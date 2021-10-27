@@ -25,7 +25,7 @@ namespace project_p1
         bool MoveLeft, MoveRight;
         List<Rectangle> ItemRemover = new List<Rectangle>();
         //Connection String must be chnaged in different branches to match the file path of the device that you are using
-        const string ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\NHL First year Periode 1\\programmeren\\arcade\\arcade 4.0\\project p1\\project p1\\DataBase\\GameDatabase.mdf;Integrated Security=True";
+        const string ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Hajan\\OneDrive - NHL Stenden\\Documenten\\GitHub\\Main-project\\project p1\\project p1\\DataBase\\GameDatabase.mdf;Integrated Security = True";
         PlayerData playerData = new PlayerData();
 
 
@@ -35,8 +35,8 @@ namespace project_p1
         int EnemyCounter = 100;
         int PlayerSpeed = 10;
         int Limit = 50;
-       public int Score = 0;
-        int Damage = 0;
+        public int Score = 0;
+        int Damage = 5;
         int EnemySpeed = 10;
         bool PauseOnOff = true;
         public string player1Name;
@@ -112,7 +112,7 @@ namespace project_p1
             EnemyCounter -= 1;
             //score setting//
             Scoretext.Content = "score: " + Score;
-            Damagetext.Content = "Damage: " + Damage;
+            Damagetext.Content = "Levens: " + Damage;
             //enemy spawning//
             if (EnemyCounter < 0)
             {
@@ -164,14 +164,14 @@ namespace project_p1
                     if (Canvas.GetTop(x) > 750)
                     {
                         ItemRemover.Add(x);
-                        Damage += 1;
+                        Damage -=1;
                     }
                     Rect EnemyHitBox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
 
                     if (PlayerHitBox.IntersectsWith(EnemyHitBox))
                     {
                         ItemRemover.Add(x);
-                        Damage += 1;
+                        Damage -=1;
                     }
                 }
 
@@ -181,15 +181,7 @@ namespace project_p1
             {
                 MyCanvas.Children.Remove(i);
             }
-            //moeilijheidsgraad en Game Over//
-            /*
-                if (Score > 10)
-            {
-                Limit = 20;
-                EnemySpeed = 20;
-            }
-            */
-
+            //moeilijheidsgraad en Game Over//        
             if (Score > 40)
             {
                 Limit = 20;
@@ -201,17 +193,17 @@ namespace project_p1
                 EnemySpeed = 12;
             }
 
-            if (Damage > 5)
+            if (Damage <0 )
             {
                 CreateCommand("INSERT INTO [Game1player] ([playerName],[HighScore]) VALUES ('" + player1Name + "','" + Score + "')", ConnectionString);
 
                 Gametimer.Stop();
-                Damagetext.Content = "damage: 5";
+                Damagetext.Content = "damage: 100";
                 Damagetext.Foreground = Brushes.Red;
-                PlayAgainMenu playAgainMenu = new PlayAgainMenu();
+                pAgain1player pAgain1 = new pAgain1player();
                 this.Visibility = Visibility.Hidden;
-                playAgainMenu.ScoreGot.Content += Convert.ToString(Score);
-                playAgainMenu.Visibility = Visibility.Visible;
+                pAgain1.ScoreGot.Content += Convert.ToString(Score);
+                pAgain1.Visibility = Visibility.Visible;
                 System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
             }
       

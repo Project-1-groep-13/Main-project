@@ -35,25 +35,26 @@ namespace project_p1
 
         private void Start1Player_Click(object sender, RoutedEventArgs e)
         {
-            Game1Player game1Player = new Game1Player();
-            MainWindow hoofdmenu = new MainWindow();
-            hoofdmenu.Visibility = Visibility.Hidden;
-            game1Player.Visibility = Visibility.Visible;
+            PlayerData playerData = new PlayerData();
+            this.Close();
+            playerData.Visibility = Visibility.Visible;
 
         }
 
         private void Start2Player_Click(object sender, RoutedEventArgs e)
         {
-            Game2Player game2Player = new Game2Player();
-            MainWindow hoofdmenu = new MainWindow();
-            hoofdmenu.Visibility = Visibility.Hidden;
-            game2Player.Visibility = Visibility.Visible;
+            PlayerData2 playerData2 = new PlayerData2();
+            playerData2.Visibility = Visibility.Visible;
+            this.Close();
+ 
         }
 
         private void Highscore_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow hoofdmenu = new MainWindow();
-            hoofdmenu.Visibility = Visibility.Hidden;
+            HighScore highScore = new HighScore();
+            highScore.Visibility = Visibility.Visible;
+            this.Close();
+
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)
