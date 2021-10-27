@@ -67,7 +67,7 @@ namespace project_p2
 
             //player 2 foto//
             ImageBrush Player2Image = new ImageBrush();
-            Player2Image.ImageSource = new BitmapImage(new Uri("pack://application:,,,/playerimage/2_5.png"));
+            Player2Image.ImageSource = new BitmapImage(new Uri("pack://application:,,,/playerimage/P2_5.png"));
             Player2.Fill = Player2Image;
 
         }

@@ -64,7 +64,23 @@ namespace project_p1
             PlayerImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/playerimage/P1_5.png"));
             Player.Fill = PlayerImage;
 
-            
+            if (Damage == 4)
+            {
+                PlayerImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/playerimage/P1_4.png"));
+            }
+            if (Damage == 3)
+            {
+                PlayerImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/playerimage/P1_3.png"));
+            }
+            if (Damage == 2)
+            {
+                PlayerImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/playerimage/P1_2.png"));
+            }
+            if (Damage == 1)
+            {
+                PlayerImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/playerimage/P1_1.png"));
+            }
+
         }
 
 

@@ -32,10 +32,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="playerimage\P2_3.png" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
   </ItemGroup>
 
@@ -58,6 +54,7 @@
     <Resource Include="playerimage\P1_5.png" />
     <Resource Include="playerimage\P2_1.png" />
     <Resource Include="playerimage\P2_2.png" />
+    <Resource Include="playerimage\P2_3.png" />
     <Resource Include="playerimage\P2_4.png" />
     <Resource Include="playerimage\P2_5.png" />
   </ItemGroup>
