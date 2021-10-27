@@ -13,7 +13,7 @@
         <Button Background="BurlyWood" Margin="63,140,71,284" FontFamily="Andalus" FontSize="25" Click="Button_Click_1">Play Again</Button>
         <Button Background="BurlyWood" Margin="63,220,71,196" FontFamily="Andalus" FontSize="25" Click="Button_Click_2">High Scores</Button>
         <Button Background="BurlyWood" Margin="63,309,71,112" FontFamily="Andalus" FontSize="25" Click="Button_Click">Quit</Button>
-        <Label Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,97,0,0" FontSize="18" FontFamily="Algerian" Content="but we managed to destroy       Ships!"/>
+        <Label Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,97,0,0" FontSize="18" FontFamily="Algerian" Content="but you have destroyed       Ships!"/>
         <Label x:Name="ScoreGot" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="285,95,0,0" FontSize="18" FontFamily="Algerian" Content=""/>
 
     </Grid>
