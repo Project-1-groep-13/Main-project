@@ -10,11 +10,11 @@ none
 false
 TRACE;RELEASE;NETCOREAPP;NETCOREAPP3_1;
 C:\Users\Chris\OneDrive\Documenten\GitHub\Chrispasma\project p1\project p1\App.xaml
-2-515874810
+71614339221
 
-41733357290
+9-1084320666
 192-1533232326
-Game1Player.xaml;MainWindow.xaml;
+EasyMode.xaml;Game1Player.xaml;Game2Player.xaml;HighScore.xaml;MainWindow.xaml;PlayAgainMenu.xaml;PlayerData.xaml;
 
 True
 
