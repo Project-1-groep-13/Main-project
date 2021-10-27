@@ -104,6 +104,8 @@ namespace project_p2
 
         private void Gameloop(object sender, EventArgs e)
         {
+            ImageBrush Player1Image = new ImageBrush();
+            ImageBrush Player2Image = new ImageBrush();
             Player1HitBox = new Rect(Canvas.GetLeft(Player1), Canvas.GetTop(Player1), Player1.Width, Player1.Height);
             Player2HitBox = new Rect(Canvas.GetLeft(Player2), Canvas.GetTop(Player2), Player2.Width, Player2.Height);
 
@@ -189,6 +191,50 @@ namespace project_p2
                         ItemRemover.Add(x);
                         Damage2 -= 1;
                     }
+                }
+                //player 1 background change
+                if (Damage1 == 4)
+                {
+                    Player1Image.ImageSource = new BitmapImage(new Uri("pack://application:,,,/playerimage/P1_4.png"));
+                    Player1.Fill = Player1Image;
+                }
+                if (Damage1 == 3)
+                {
+                    Player1Image.ImageSource = new BitmapImage(new Uri("pack://application:,,,/playerimage/P1_3.png"));
+                    Player1.Fill = Player1Image;
+                }
+                if (Damage1 == 2)
+                {
+                    Player1Image.ImageSource = new BitmapImage(new Uri("pack://application:,,,/playerimage/P1_2.png"));
+                    Player1.Fill = Player1Image;
+                }
+                if (Damage1 == 1)
+                {
+                    Player1Image.ImageSource = new BitmapImage(new Uri("pack://application:,,,/playerimage/P1_1.png"));
+                    Player1.Fill = Player1Image;
+                }
+
+
+                //player 2 background change
+                if (Damage2 == 4)
+                {
+                    Player2Image.ImageSource = new BitmapImage(new Uri("pack://application:,,,/playerimage/P2_4.png"));
+                    Player2.Fill = Player2Image;
+                }
+                if (Damage2 == 3)
+                {
+                    Player2Image.ImageSource = new BitmapImage(new Uri("pack://application:,,,/playerimage/P2_3.png"));
+                    Player2.Fill = Player2Image;
+                }
+                if (Damage2 == 2)
+                {
+                    Player2Image.ImageSource = new BitmapImage(new Uri("pack://application:,,,/playerimage/P2_2.png"));
+                    Player2.Fill = Player2Image;
+                }
+                if (Damage2 == 1)
+                {
+                    Player2Image.ImageSource = new BitmapImage(new Uri("pack://application:,,,/playerimage/P2_1.png"));
+                    Player2.Fill = Player2Image;
                 }
 
             }
