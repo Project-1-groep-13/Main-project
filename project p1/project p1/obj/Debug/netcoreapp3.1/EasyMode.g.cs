@@ -101,7 +101,7 @@ namespace project_p1 {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/project p1;component/easymode.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/project p1_tyodezmv_wpftmp;component/easymode.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\EasyMode.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
