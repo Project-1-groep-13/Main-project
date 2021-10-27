@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 
 
 
+
 namespace project_p1
 {
     /// <summary>
@@ -23,9 +24,8 @@ namespace project_p1
     public partial class HighScore : Window
     {
         //Connection String must be chnaged in different branches to match the file path of the device that you are using
-        const string ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\NHL First year Periode 1\\programmeren\\arcade\\arcade 4.0\\project p1\\project p1\\DataBase\\GameDatabase.mdf;Integrated Security=True";
-
-
+        const string ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Hajan\\OneDrive - NHL Stenden\\Documenten\\GitHub\\Main-project\\project p1\\project p1\\DataBase\\GameDatabase.mdf;Integrated Security = True";
+       
         public HighScore()
         {
             InitializeComponent();
@@ -40,6 +40,7 @@ namespace project_p1
             
             
             dtGridView();
+            dtGridView2();
            
 
 
@@ -62,6 +63,18 @@ namespace project_p1
             dtGrid.DataContext = dt;
         }
 
+        private void dtGridView2()
+        {
+            SqlConnection sqlConnection = new SqlConnection();
+            SqlConnection connection = new SqlConnection(ConnectionString);
+
+            SqlCommand cmd = new SqlCommand("Select top 5 playerName1 AS 'Player 1',playerName2 AS 'Player 2',HighScore AS Score From Game2player Order By HighScore DESC", connection);
+            connection.Open();
+            DataTable dt = new DataTable();
+            dt.Load(cmd.ExecuteReader());
+            connection.Close();
+            dtGrid_Copy.DataContext = dt;
+        }
 
 
         /// <summary>

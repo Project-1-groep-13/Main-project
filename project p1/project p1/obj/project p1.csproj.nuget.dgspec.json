@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "\\\\Mac\\Home\\Documents\\School\\HBO ICT\\Module 1\\Arcade Game\\Main-project\\project p1\\project p1\\project p1.csproj": {}
+    "C:\\Users\\Hajan\\OneDrive - NHL Stenden\\Documenten\\GitHub\\Main-project\\project p1\\project p1\\project p1.csproj": {}
   },
   "projects": {
-    "\\\\Mac\\Home\\Documents\\School\\HBO ICT\\Module 1\\Arcade Game\\Main-project\\project p1\\project p1\\project p1.csproj": {
+    "C:\\Users\\Hajan\\OneDrive - NHL Stenden\\Documenten\\GitHub\\Main-project\\project p1\\project p1\\project p1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "\\\\Mac\\Home\\Documents\\School\\HBO ICT\\Module 1\\Arcade Game\\Main-project\\project p1\\project p1\\project p1.csproj",
+        "projectUniqueName": "C:\\Users\\Hajan\\OneDrive - NHL Stenden\\Documenten\\GitHub\\Main-project\\project p1\\project p1\\project p1.csproj",
         "projectName": "project p1",
-        "projectPath": "\\\\Mac\\Home\\Documents\\School\\HBO ICT\\Module 1\\Arcade Game\\Main-project\\project p1\\project p1\\project p1.csproj",
-        "packagesPath": "C:\\Users\\svenimholz\\.nuget\\packages\\",
-        "outputPath": "\\\\Mac\\Home\\Documents\\School\\HBO ICT\\Module 1\\Arcade Game\\Main-project\\project p1\\project p1\\obj\\",
+        "projectPath": "C:\\Users\\Hajan\\OneDrive - NHL Stenden\\Documenten\\GitHub\\Main-project\\project p1\\project p1\\project p1.csproj",
+        "packagesPath": "C:\\Users\\Hajan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Hajan\\OneDrive - NHL Stenden\\Documenten\\GitHub\\Main-project\\project p1\\project p1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\svenimholz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Hajan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

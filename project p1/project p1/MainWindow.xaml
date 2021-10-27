@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:project_p1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="900" Width="720" ResizeMode="NoResize">
+        Title="MainWindow" Height="750" Width="720" ResizeMode="NoResize">
 
     <Grid Name="Hoofdmenu" HorizontalAlignment="Right" Width="720">
-        <StackPanel Margin="0,228,0,119">
+        <StackPanel Margin="0,186,0,0">
             <Button
             Background="BurlyWood"
             Margin="10"
@@ -28,7 +28,7 @@
                     Background="BurlyWood"
                     FontSize="20" 
                     FontFamily="Algerian" 
-                    FontStyle="Italic">Start 1 Player</Button>
+                    FontStyle="Italic" Content="Single Player "/>
             <Button
             Margin="10"
             Width="200"
@@ -39,7 +39,7 @@
                     Background="BurlyWood" 
                     FontSize="20" 
                     FontFamily="Algerian" 
-                    FontStyle="Italic">Start 2 Players</Button>
+                    FontStyle="Italic" Content="multiplayer"/>
             <Button
             Margin="10"
             Width="200"

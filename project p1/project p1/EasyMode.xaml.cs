@@ -30,7 +30,7 @@ namespace project_p1
         int PlayerSpeed = 10;
         int Limit = 50;
         int Score = 0;
-        int Damage = 0;
+        int Damage = 5;
         int EnemySpeed = 10;
         bool PauseOnOff = true;
         Rect PlayerHitBox;
@@ -62,17 +62,11 @@ namespace project_p1
 
             if (PauseOnOff == true)
             {
-
                 Gametimer.Stop();
-
-
             }
             if (PauseOnOff == false)
             {
-
                 Gametimer.Start();
-
-
             }
             if (PauseOnOff == true)
             {
@@ -91,7 +85,7 @@ namespace project_p1
             EnemyCounter -= 1;
             //score setting//
             Scoretext.Content = "score: " + Score;
-            Damagetext.Content = "Damage: " + Damage;
+            Damagetext.Content = "Levens: " + Damage;
             //enemy spawning//
             if (EnemyCounter < 0)
             {
@@ -143,14 +137,14 @@ namespace project_p1
                     if (Canvas.GetTop(x) > 750)
                     {
                         ItemRemover.Add(x);
-                        Damage += 10;
+                        Damage -=1;
                     }
                     Rect EnemyHitBox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
 
                     if (PlayerHitBox.IntersectsWith(EnemyHitBox))
                     {
                         ItemRemover.Add(x);
-                        Damage += 5;
+                        Damage -=1;
                     }
                 }
 
@@ -202,7 +196,7 @@ namespace project_p1
                 playAgainMenu.ScoreGot.Content += Convert.ToString(Score);
                 playAgainMenu.Visibility = Visibility.Visible;
             }
-            if (Damage > 50)
+            if (Damage <0)
             {
                 Gametimer.Stop();
                 PlayAgainMenu playAgainMenu = new PlayAgainMenu();
