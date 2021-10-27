@@ -154,38 +154,7 @@ namespace project_p1
             {
                 MyCanvass.Children.Remove(i);
             }
-            //moeilijheidsgraad en Game Over//
-            /*
-                if (Score > 10)
-            {
-                Limit = 20;
-                EnemySpeed = 20;
-            }
-            
-
-            if (Score > 40)
-            {
-                Limit = 20;
-                EnemySpeed = 11;
-            }
-            if (Score > 100)
-            {
-                Limit = 20;
-                EnemySpeed = 12;
-            }
-            */
-            /*
-            if (Damage > 99)
-            {
-                Gametimer.Stop();
-                Damagetext.Content = "damage: 100";
-                Damagetext.Foreground = Brushes.Red;
-                MessageBox.Show("Captain, You have Destroyed " + Score + " Alien ships!" + Environment.NewLine + "pres OK to play again!");
-
-                System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
-                Application.Current.Shutdown();
-            }
-            */
+           
 
             //limit mode 
             if (Score == 20)
