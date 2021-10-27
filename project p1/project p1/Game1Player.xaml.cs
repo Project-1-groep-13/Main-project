@@ -164,14 +164,14 @@ namespace project_p1
                     if (Canvas.GetTop(x) > 750)
                     {
                         ItemRemover.Add(x);
-                        Damage += 10;
+                        Damage += 1;
                     }
                     Rect EnemyHitBox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
 
                     if (PlayerHitBox.IntersectsWith(EnemyHitBox))
                     {
                         ItemRemover.Add(x);
-                        Damage += 5;
+                        Damage += 1;
                     }
                 }
 
@@ -201,12 +201,12 @@ namespace project_p1
                 EnemySpeed = 12;
             }
 
-            if (Damage > 99)
+            if (Damage > 5)
             {
                 CreateCommand("INSERT INTO [Game1player] ([playerName],[HighScore]) VALUES ('" + player1Name + "','" + Score + "')", ConnectionString);
 
                 Gametimer.Stop();
-                Damagetext.Content = "damage: 100";
+                Damagetext.Content = "damage: 5";
                 Damagetext.Foreground = Brushes.Red;
                 PlayAgainMenu playAgainMenu = new PlayAgainMenu();
                 this.Visibility = Visibility.Hidden;

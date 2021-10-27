@@ -143,14 +143,14 @@ namespace project_p1
                     if (Canvas.GetTop(x) > 750)
                     {
                         ItemRemover.Add(x);
-                        Damage += 10;
+                        Damage += 1;
                     }
                     Rect EnemyHitBox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
 
                     if (PlayerHitBox.IntersectsWith(EnemyHitBox))
                     {
                         ItemRemover.Add(x);
-                        Damage += 5;
+                        Damage += 1;
                     }
                 }
 
@@ -202,7 +202,7 @@ namespace project_p1
                 playAgainMenu.ScoreGot.Content += Convert.ToString(Score);
                 playAgainMenu.Visibility = Visibility.Visible;
             }
-            if (Damage > 50)
+            if (Damage > 5)
             {
                 Gametimer.Stop();
                 PlayAgainMenu playAgainMenu = new PlayAgainMenu();
