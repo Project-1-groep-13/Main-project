@@ -121,3 +121,19 @@ E:\NHL First year Periode 1\programmeren\arcade\arcade 4.0\project p1\project p1
 \\Mac\Home\Documents\School\HBO ICT\Module 1\Arcade Game\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\PlayerData.baml
 \\Mac\Home\Documents\School\HBO ICT\Module 1\Arcade Game\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\Game2Player.g.cs
 \\Mac\Home\Documents\School\HBO ICT\Module 1\Arcade Game\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\Game2Player.baml
+C:\Users\Chris\OneDrive\Documenten\GitHub\Chrispasma\project p1\project p1\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\Chris\OneDrive\Documenten\GitHub\Chrispasma\project p1\project p1\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\Chris\OneDrive\Documenten\GitHub\Chrispasma\project p1\project p1\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\Chris\OneDrive\Documenten\GitHub\Chrispasma\project p1\project p1\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\Chris\OneDrive\Documenten\GitHub\Chrispasma\project p1\project p1\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Chris\OneDrive\Documenten\GitHub\Chrispasma\project p1\project p1\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Chris\OneDrive\Documenten\GitHub\Chrispasma\project p1\project p1\obj\Debug\netcoreapp3.1\EasyMode.g.cs
+C:\Users\Chris\OneDrive\Documenten\GitHub\Chrispasma\project p1\project p1\obj\Debug\netcoreapp3.1\Game2Player.g.cs
+C:\Users\Chris\OneDrive\Documenten\GitHub\Chrispasma\project p1\project p1\obj\Debug\netcoreapp3.1\HighScore.g.cs
+C:\Users\Chris\OneDrive\Documenten\GitHub\Chrispasma\project p1\project p1\obj\Debug\netcoreapp3.1\PlayAgainMenu.g.cs
+C:\Users\Chris\OneDrive\Documenten\GitHub\Chrispasma\project p1\project p1\obj\Debug\netcoreapp3.1\PlayerData.g.cs
+C:\Users\Chris\OneDrive\Documenten\GitHub\Chrispasma\project p1\project p1\obj\Debug\netcoreapp3.1\EasyMode.baml
+C:\Users\Chris\OneDrive\Documenten\GitHub\Chrispasma\project p1\project p1\obj\Debug\netcoreapp3.1\Game2Player.baml
+C:\Users\Chris\OneDrive\Documenten\GitHub\Chrispasma\project p1\project p1\obj\Debug\netcoreapp3.1\HighScore.baml
+C:\Users\Chris\OneDrive\Documenten\GitHub\Chrispasma\project p1\project p1\obj\Debug\netcoreapp3.1\PlayAgainMenu.baml
+C:\Users\Chris\OneDrive\Documenten\GitHub\Chrispasma\project p1\project p1\obj\Debug\netcoreapp3.1\PlayerData.baml
