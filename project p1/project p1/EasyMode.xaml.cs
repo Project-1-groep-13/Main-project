@@ -86,7 +86,7 @@ namespace project_p1
             EnemyCounter -= 1;
             //score setting//
             Scoretext.Content = "score: " + Score;
-            Damagetext.Content = "Levens: " + Damage;
+            Damagetext.Content = "Lives: " + Damage;
             //enemy spawning//
             if (EnemyCounter < 0)
             {

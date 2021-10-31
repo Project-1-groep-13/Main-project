@@ -112,8 +112,8 @@ namespace project_p2
             EnemyCounter -= 1;
             //score setting//
             Scoretext.Content = "score: " + Score;
-            Damage1text.Content = "Levens: " + Damage1;
-            Damage2text.Content = "Levens: " + Damage2;
+            Damage1text.Content = "Lives: " + Damage1;
+            Damage2text.Content = "Lives: " + Damage2;
             //enemy spawning//
             if (EnemyCounter < 0)
             {
@@ -374,11 +374,8 @@ namespace project_p2
         private void Quit_Click(object sender, RoutedEventArgs e)
         {
             CreateCommand("INSERT INTO [Game2player] ([playerName1],[playerName2],[HighScore]) VALUES ('" + player1name + "','" + player2name + "','" + Score + "')", ConnectionString);
-
             Gametimer.Stop();
-            MainWindow mainWindow = new MainWindow();
             this.Close();
-            mainWindow.Visibility = Visibility.Visible;
             
         }
 
