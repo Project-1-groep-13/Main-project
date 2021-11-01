@@ -33,7 +33,6 @@ namespace project_p1
         private void Start1Player_Click(object sender, RoutedEventArgs e)
         {
             PlayerData playerData = new PlayerData();
-            this.Close();
             playerData.Visibility = Visibility.Visible;
 
         }
@@ -42,7 +41,6 @@ namespace project_p1
         {
             PlayerData2 playerData2 = new PlayerData2();
             playerData2.Visibility = Visibility.Visible;
-            this.Close();
  
         }
 

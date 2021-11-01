@@ -25,9 +25,7 @@ namespace project_p1
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            MainWindow main = new MainWindow();
-            
-            main.Visibility = Visibility.Visible;
+            this.Close();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

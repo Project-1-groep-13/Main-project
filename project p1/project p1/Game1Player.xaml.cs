@@ -29,6 +29,7 @@ namespace project_p1
         PlayerData playerData = new PlayerData();
 
 
+
         Random Ran = new Random();
 
         int EnemySpriteCounter = 0;
@@ -114,7 +115,7 @@ namespace project_p1
             EnemyCounter -= 1;
             //score setting//
             Scoretext.Content = "score: " + Score;
-            Damagetext.Content = "Levens: " + Damage;
+            Damagetext.Content = "Lives: " + Damage;
             //enemy spawning//
             if (EnemyCounter < 0)
             {
@@ -209,6 +210,7 @@ namespace project_p1
                 Limit = 20;
                 EnemySpeed = 11;
             }
+
             if (Score > 100)
             {
                 Limit = 20;
@@ -238,7 +240,7 @@ namespace project_p1
                 MoveLeft = true;
             }
             if (e.Key == Key.Right)
-            {
+            { 
                 MoveRight = true;
             }
 
@@ -278,9 +280,7 @@ namespace project_p1
             
             CreateCommand("INSERT INTO [Game1player] ([playerName],[HighScore]) VALUES ('" + player1Name + "','" + Score + "')", ConnectionString);
             Gametimer.Stop();
-            MainWindow mainWindow = new MainWindow();
             this.Hide();
-            mainWindow.Visibility = Visibility.Visible;
         }
 
         //enemys generaten//
