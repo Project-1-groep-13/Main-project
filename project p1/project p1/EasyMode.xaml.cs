@@ -19,12 +19,12 @@ namespace project_p1
     /// </summary>
     public partial class EasyMode : Window
     {
-        DispatcherTimer Gametimer = new DispatcherTimer();
-        bool MoveLeft, MoveRight;
-        List<Rectangle> ItemRemover = new List<Rectangle>();
+        DispatcherTimer Gametimer = new DispatcherTimer(); //set gametimer
+        bool MoveLeft, MoveRight;       //makes bool for movement left/right
+        List<Rectangle> ItemRemover = new List<Rectangle>(); //makes list for remover items
 
-        Random Ran = new Random();
-
+        Random Ran = new Random(); //random number generator
+        //alle ints, bools en rectangles
         int EnemySpriteCounter = 0;
         int EnemyCounter = 100;
         int PlayerSpeed = 10;
@@ -37,34 +37,34 @@ namespace project_p1
         public EasyMode()
         {
             InitializeComponent();
-            Gametimer.Interval = TimeSpan.FromMilliseconds(20);
+            Gametimer.Interval = TimeSpan.FromMilliseconds(20); //set timerspeed
             Gametimer.Tick += Gameloop;
-            Gametimer.Start();
+            Gametimer.Start(); //start gametimer
 
             MyCanvass.Focus();
             //achtergrond//
-            ImageBrush background = new ImageBrush();
-            background.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/purple.png"));
+            ImageBrush background = new ImageBrush(); //nieuwe achtergrond maken
+            background.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/purple.png")); //image uit map halen
             background.TileMode = TileMode.Tile;
             background.Viewport = new Rect(0, 0, 0.15, 0.15);
             background.ViewportUnits = BrushMappingMode.RelativeToBoundingBox;
             MyCanvass.Background = background;
 
             //player foto//
-            ImageBrush PlayerImage = new ImageBrush();
-            PlayerImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/playerimage/P1_5.png"));
-            Player.Fill = PlayerImage;
+            ImageBrush PlayerImage = new ImageBrush(); //new image for player
+            PlayerImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/playerimage/P1_5.png")); //image uit map halen 
+            Player.Fill = PlayerImage; //fill player box with image player
 
             
         }
         private void WhenButtonClick(object sender, RoutedEventArgs e)
         {
 
-            if (PauseOnOff == true)
+            if (PauseOnOff == true) //pause off gametimer stop
             {
                 Gametimer.Stop();
             }
-            if (PauseOnOff == false)
+            if (PauseOnOff == false) //pause on gametimer start
             {
                 Gametimer.Start();
             }
@@ -81,9 +81,9 @@ namespace project_p1
         private void Gameloop(object sender, EventArgs e)
         {
             ImageBrush PlayerImage = new ImageBrush();
-            PlayerHitBox = new Rect(Canvas.GetLeft(Player), Canvas.GetTop(Player), Player.Width, Player.Height);
+            PlayerHitBox = new Rect(Canvas.GetLeft(Player), Canvas.GetTop(Player), Player.Width, Player.Height); //set playerhitbox
 
-            EnemyCounter -= 1;
+            EnemyCounter -= 1; //ammount of enemies in game
             //score setting//
             Scoretext.Content = "score: " + Score;
             Damagetext.Content = "Lives: " + Damage;
@@ -109,10 +109,10 @@ namespace project_p1
                 {
                     Canvas.SetTop(x, Canvas.GetTop(x) - 20);
 
-                    Rect BulletHitBox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
+                    Rect BulletHitBox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height); //create bullethitbox
                     if (Canvas.GetTop(x) < 10)
                     {
-                        ItemRemover.Add(x);
+                        ItemRemover.Add(x); // set to itemremover
                     }
 
                     foreach (var y in MyCanvass.Children.OfType<Rectangle>())
@@ -121,11 +121,11 @@ namespace project_p1
                         {
                             Rect EnemyHit = new Rect(Canvas.GetLeft(y), Canvas.GetTop(y), y.Width, y.Height);
 
-                            if (BulletHitBox.IntersectsWith(EnemyHit))
+                            if (BulletHitBox.IntersectsWith(EnemyHit)) //bullet hit with enemy
                             {
-                                ItemRemover.Add(x);
-                                ItemRemover.Add(y);
-                                Score++;
+                                ItemRemover.Add(x);  //add bullet to remover
+                                ItemRemover.Add(y);  //add enemy to remover
+                                Score++;             //set score +1
                             }
                         }
                     }
@@ -135,14 +135,14 @@ namespace project_p1
                 {  //enemy hit op player of bij player langs//
                     Canvas.SetTop(x, Canvas.GetTop(x) + EnemySpeed);
 
-                    if (Canvas.GetTop(x) > 750)
+                    if (Canvas.GetTop(x) > 750) //if enemy goes under window, enemy in remover and damage +1
                     {
                         ItemRemover.Add(x);
                         Damage -=1;
                     }
-                    Rect EnemyHitBox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
+                    Rect EnemyHitBox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height); //enemyhitbox build
 
-                    if (PlayerHitBox.IntersectsWith(EnemyHitBox))
+                    if (PlayerHitBox.IntersectsWith(EnemyHitBox)) //if enemy hits player, enemy in remover and damage +1
                     {
                         ItemRemover.Add(x);
                         Damage -=1;
@@ -151,14 +151,14 @@ namespace project_p1
 
             }
 
-            foreach (Rectangle i in ItemRemover)
+            foreach (Rectangle i in ItemRemover)  //itemremover removes item from window
             {
                 MyCanvass.Children.Remove(i);
             }
            
 
             //limit mode 
-            if (Score == 20)
+            if (Score == 20) // score win ends game
             {
                 Gametimer.Stop();
                 PlayAgainMenu playAgainMenu = new PlayAgainMenu();
@@ -166,7 +166,7 @@ namespace project_p1
                 playAgainMenu.ScoreGot.Content += Convert.ToString(Score);
                 playAgainMenu.Visibility = Visibility.Visible;
             }
-            if (Damage <0)
+            if (Damage <0) //damage 0 ends game 
             {
                 Gametimer.Stop();
                 PlayAgainMenu playAgainMenu = new PlayAgainMenu();
@@ -174,22 +174,22 @@ namespace project_p1
                 playAgainMenu.ScoreGot.Content += Convert.ToString(Score);
                 playAgainMenu.Visibility = Visibility.Visible;
             }
-            if (Damage == 4)
+            if (Damage == 4) //change image from 5 person to 4 person on player
             {
                 PlayerImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/playerimage/P1_4.png"));
                 Player.Fill = PlayerImage;
             }
-            if (Damage == 3)
+            if (Damage == 3) //change image from 4 person to 3 person on player
             {
                 PlayerImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/playerimage/P1_3.png"));
                 Player.Fill = PlayerImage;
             }
-            if (Damage == 2)
+            if (Damage == 2) //change image from 3 person to 2 person on player
             {
                 PlayerImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/playerimage/P1_2.png"));
                 Player.Fill = PlayerImage;
             }
-            if (Damage == 1)
+            if (Damage == 1) //change image from 2 person to 1 person on player
             {
                 PlayerImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/playerimage/P1_1.png"));
                 Player.Fill = PlayerImage;
@@ -223,25 +223,25 @@ namespace project_p1
             }
             if (e.Key == Key.Space)
             {
-                ImageBrush bullet = new ImageBrush();
-                bullet.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/kannonskogel.png"));
-                Rectangle NewBullet = new Rectangle
+                ImageBrush bullet = new ImageBrush(); // new image build 
+                bullet.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/kannonskogel.png")); //gets image from map 
+                Rectangle NewBullet = new Rectangle //new rectangle for bullat made 
                 {                  
-                    Tag = "bullet",
+                    Tag = "bullet", // named bullet
                     Height = 5,
                     Width = 5,
-                    Fill = bullet,
+                    Fill = bullet, //fills rectangle NewBullet with imagebrush bullet
                     
                 };
-                Canvas.SetLeft(NewBullet, Canvas.GetLeft(Player) + Player.Width / 2);
-                Canvas.SetTop(NewBullet, Canvas.GetTop(Player) - NewBullet.Height);
+                Canvas.SetLeft(NewBullet, Canvas.GetLeft(Player) + Player.Width / 2); // set bullet location from bullet 
+                Canvas.SetTop(NewBullet, Canvas.GetTop(Player) - NewBullet.Height); // set bullet location from bullet 
 
-                MyCanvass.Children.Add(NewBullet);
+                MyCanvass.Children.Add(NewBullet); //add bullet to the window
 
             }
         }
 
-        private void Pause_Click(object sender, RoutedEventArgs e)
+        private void Pause_Click(object sender, RoutedEventArgs e) //make pause button working
         {
             if (PauseOnOff == true)
             {
@@ -261,21 +261,21 @@ namespace project_p1
             }
         }
 
-        private void Quit_Click(object sender, RoutedEventArgs e)
+        private void Quit_Click(object sender, RoutedEventArgs e) //button quit working
         {
             Gametimer.Stop();
             this.Hide();
-            MainWindow hoofdmenu = new MainWindow();
+            MainWindow hoofdmenu = new MainWindow(); //maak hoofdmenu weer zichtbaar
             hoofdmenu.Visibility = Visibility.Visible;
         }
 
         //enemys generaten//
         private void MakeEnimies()
         {
-            ImageBrush EnemySprite = new ImageBrush();
-            EnemySpriteCounter = Ran.Next(1, 5);
+            ImageBrush EnemySprite = new ImageBrush(); //create enemybrush 
+            EnemySpriteCounter = Ran.Next(1, 5); //make random number for the random image enemy
 
-            switch (EnemySpriteCounter)
+            switch (EnemySpriteCounter) //takes the image for enemy depending on the random number from above 
             {
                 case 1:
                     EnemySprite.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/1.png"));
@@ -295,17 +295,17 @@ namespace project_p1
 
             }
 
-            Rectangle NewEnemy = new Rectangle
+            Rectangle NewEnemy = new Rectangle //create a new rectangle for the enemy
             {
                 Tag = "enemy",
                 Height = 50,
                 Width = 56,
-                Fill = EnemySprite,
+                Fill = EnemySprite, //fills rectangle with the picture enemy that has been generated above 
             };
 
-            Canvas.SetTop(NewEnemy, -100);
-            Canvas.SetLeft(NewEnemy, Ran.Next(30, 430));
-            MyCanvass.Children.Add(NewEnemy);
+            Canvas.SetTop(NewEnemy, -100); //set enemy spawning height
+            Canvas.SetLeft(NewEnemy, Ran.Next(30, 430)); // set enemy spawning width
+            MyCanvass.Children.Add(NewEnemy); // set enemy rectangle in window
         }
     }
 }
