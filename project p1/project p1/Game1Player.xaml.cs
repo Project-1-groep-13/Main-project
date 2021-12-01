@@ -30,9 +30,9 @@ namespace project_p1
 
 
 
-        Random Ran = new Random();
+        Random Ran = new Random(); //random number generator 
 
-        int EnemySpriteCounter = 0;
+        int EnemySpriteCounter = 0; //all ints, bools and strings for starting game 
         int EnemyCounter = 100;
         int PlayerSpeed = 10;
         int Limit = 50;
@@ -47,9 +47,9 @@ namespace project_p1
         public Game1Player()
         {
             InitializeComponent();
-            Gametimer.Interval = TimeSpan.FromMilliseconds(20);
-            Gametimer.Tick += Gameloop;
-            Gametimer.Start();
+            Gametimer.Interval = TimeSpan.FromMilliseconds(20); //set timespeed 
+            Gametimer.Tick += Gameloop; 
+            Gametimer.Start(); //start timer 
 
             MyCanvas.Focus();
             //achtergrond//
