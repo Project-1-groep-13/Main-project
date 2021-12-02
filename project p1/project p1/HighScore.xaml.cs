@@ -29,12 +29,12 @@ namespace project_p1
         public HighScore()
         {
             InitializeComponent();
-            ImageBrush bg = new ImageBrush();
-            bg.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/purple.png"));
+            ImageBrush bg = new ImageBrush(); //creating imagebrush for background
+            bg.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/purple.png")); //getting image from folder for background
             bg.TileMode = TileMode.Tile;
             bg.Viewport = new Rect(0, 0, 0.15, 0.15);
             bg.ViewportUnits = BrushMappingMode.RelativeToBoundingBox;
-            this.Background = bg;
+            this.Background = bg; //setting background window
 
             
             
