@@ -54,16 +54,16 @@ namespace project_p1
             MyCanvas.Focus();
             //achtergrond//
             ImageBrush background = new ImageBrush();
-            background.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/purple.png"));
+            background.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/purple.png")); //get picture from folder
             background.TileMode = TileMode.Tile;
             background.Viewport = new Rect(0, 0, 0.15, 0.15);
             background.ViewportUnits = BrushMappingMode.RelativeToBoundingBox;
-            MyCanvas.Background = background;
+            MyCanvas.Background = background; //set background canvas to the background from folder
 
             //player foto//
-            ImageBrush PlayerImage = new ImageBrush();
-            PlayerImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/playerimage/P1_5.png"));
-            Player.Fill = PlayerImage;
+            ImageBrush PlayerImage = new ImageBrush(); //make new playerimage 
+            PlayerImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/playerimage/P1_5.png")); //get playerimage from folder
+            Player.Fill = PlayerImage; //fill Player with playerimage
 
 
 
@@ -110,16 +110,16 @@ namespace project_p1
         private void Gameloop(object sender, EventArgs e)
         {
             ImageBrush PlayerImage = new ImageBrush();
-            PlayerHitBox = new Rect(Canvas.GetLeft(Player), Canvas.GetTop(Player), Player.Width, Player.Height);
+            PlayerHitBox = new Rect(Canvas.GetLeft(Player), Canvas.GetTop(Player), Player.Width, Player.Height); //make playerhitbox
 
-            EnemyCounter -= 1;
+            EnemyCounter -= 1; //no more enemys on field than one 
             //score setting//
-            Scoretext.Content = "score: " + Score;
-            Damagetext.Content = "Lives: " + Damage;
+            Scoretext.Content = "score: " + Score; //scoretext on window
+            Damagetext.Content = "Lives: " + Damage; //damagetext on window
             //enemy spawning//
             if (EnemyCounter < 0)
             {
-                MakeEnimies();
+                MakeEnimies(); //go to MakeEnemies
                 EnemyCounter = Limit;
             }
             //player movement//
@@ -138,19 +138,19 @@ namespace project_p1
                 {
                     Canvas.SetTop(x, Canvas.GetTop(x) - 20);
 
-                    Rect BulletHitBox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
+                    Rect BulletHitBox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height); //make bullethitbox
                     if (Canvas.GetTop(x) < 10)
                     {
-                        ItemRemover.Add(x);
+                        ItemRemover.Add(x); //set bullet to itemremover
                     }
 
                     foreach (var y in MyCanvas.Children.OfType<Rectangle>())
                     {
                         if (y is Rectangle && (string)y.Tag == "enemy")
                         {
-                            Rect EnemyHit = new Rect(Canvas.GetLeft(y), Canvas.GetTop(y), y.Width, y.Height);
+                            Rect EnemyHit = new Rect(Canvas.GetLeft(y), Canvas.GetTop(y), y.Width, y.Height); //make enemyhitbox
 
-                            if (BulletHitBox.IntersectsWith(EnemyHit))
+                            if (BulletHitBox.IntersectsWith(EnemyHit)) //if bullet and enemy hit, both to itemremover with score +1
                             {
                                 ItemRemover.Add(x);
                                 ItemRemover.Add(y);
