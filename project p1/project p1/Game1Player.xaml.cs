@@ -164,35 +164,35 @@ namespace project_p1
                 {  //enemy hit op player of bij player langs//
                     Canvas.SetTop(x, Canvas.GetTop(x) + EnemySpeed);
 
-                    if (Canvas.GetTop(x) > 750)
+                    if (Canvas.GetTop(x) > 750) //if enemy gets to bottom, enemy in itemremover and damage -1
                     {
                         ItemRemover.Add(x);
                         Damage -=1;
                     }
-                    Rect EnemyHitBox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
+                    Rect EnemyHitBox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height); //make anemyhitbox
 
-                    if (PlayerHitBox.IntersectsWith(EnemyHitBox))
+                    if (PlayerHitBox.IntersectsWith(EnemyHitBox)) //if playerhitbox hits enemyhitbox then add enemy in itemremover and damge -1
                     {
                         ItemRemover.Add(x);
                         Damage -=1;
                     }
                 }
-                if (Damage == 4)
+                if (Damage == 4) //changing images for the ammount of lives for the player 
                 {
                     PlayerImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/playerimage/P1_4.png"));
                     Player.Fill = PlayerImage;
                 }
-                if (Damage == 3)
+                if (Damage == 3) //changing images for the ammount of lives for the player 
                 {
                     PlayerImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/playerimage/P1_3.png"));
                     Player.Fill = PlayerImage;
                 }
-                if (Damage == 2)
+                if (Damage == 2) //changing images for the ammount of lives for the player 
                 {
                     PlayerImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/playerimage/P1_2.png"));
                     Player.Fill = PlayerImage;
                 }
-                if (Damage == 1)
+                if (Damage == 1) //changing images for the ammount of lives for the player 
                 {
                     PlayerImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/playerimage/P1_1.png"));
                     Player.Fill = PlayerImage;
@@ -200,7 +200,7 @@ namespace project_p1
 
             }
 
-            foreach (Rectangle i in ItemRemover)
+            foreach (Rectangle i in ItemRemover) //itemremover delete from window
             {
                 MyCanvas.Children.Remove(i);
             }
@@ -258,19 +258,19 @@ namespace project_p1
             }
             if (e.Key == Key.Space)
             {
-                ImageBrush bullet = new ImageBrush();
-                bullet.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/kannonskogel.png"));
-                Rectangle NewBullet = new Rectangle
+                ImageBrush bullet = new ImageBrush(); //adding imagebrush for bullet
+                bullet.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/kannonskogel.png")); //getting image from folder for bullet
+                Rectangle NewBullet = new Rectangle //creating bullet rectangle
                 {
                     Tag = "bullet",
                     Height = 5,
                     Width = 5,
-                    Fill = bullet,
+                    Fill = bullet, //filling bullet rectangle with image from above 
                     
                 };
-                Canvas.SetLeft(NewBullet, Canvas.GetLeft(Player) + Player.Width / 2);
-                Canvas.SetTop(NewBullet, Canvas.GetTop(Player) - NewBullet.Height);
-                MyCanvas.Children.Add(NewBullet);
+                Canvas.SetLeft(NewBullet, Canvas.GetLeft(Player) + Player.Width / 2); //setting location start bullet
+                Canvas.SetTop(NewBullet, Canvas.GetTop(Player) - NewBullet.Height); //setting location start bullet 
+                MyCanvas.Children.Add(NewBullet); //adding bullet to the window
 
             }
         }
@@ -286,8 +286,8 @@ namespace project_p1
         //enemys generaten//
         private void MakeEnimies()
         {
-            ImageBrush EnemySprite = new ImageBrush();
-            EnemySpriteCounter = Ran.Next(1, 5);
+            ImageBrush EnemySprite = new ImageBrush(); //creating imagebrush for enemy 
+            EnemySpriteCounter = Ran.Next(1, 5); //creating random number for the enemypicture 
 
             switch (EnemySpriteCounter)
             {
@@ -309,17 +309,17 @@ namespace project_p1
 
             }
 
-            Rectangle NewEnemy = new Rectangle
+            Rectangle NewEnemy = new Rectangle //creating rectangle for enemy 
             {
                 Tag = "enemy",
                 Height = 50,
                 Width = 56,
-                Fill = EnemySprite,
+                Fill = EnemySprite, //filling rectangle with image enemy from above 
             };
 
-            Canvas.SetTop(NewEnemy, -100);
-            Canvas.SetLeft(NewEnemy, Ran.Next(30, 430));
-            MyCanvas.Children.Add(NewEnemy);
+            Canvas.SetTop(NewEnemy, -100); //set location from enemy 
+            Canvas.SetLeft(NewEnemy, Ran.Next(30, 430)); //set location from enemy 
+            MyCanvas.Children.Add(NewEnemy); //set enemy in window 
         }
     }
 }
