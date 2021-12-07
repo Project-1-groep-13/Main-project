@@ -21,33 +21,33 @@ namespace project_p1
         {
             InitializeComponent();
             //achtergrond//
-            ImageBrush background = new ImageBrush();
-            background.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/purple.png"));
+            ImageBrush background = new ImageBrush(); //create imagebrush for background
+            background.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/purple.png")); //getting image from file 
             background.TileMode = TileMode.Tile;
             background.Viewport = new Rect(0, 0, 0.15, 0.15);
             background.ViewportUnits = BrushMappingMode.RelativeToBoundingBox;
-            this.Background = background;
+            this.Background = background; //set background from imagebrush background
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            this.Close();
-            HighScore highScore = new HighScore();
-            highScore.Visibility = Visibility.Visible;
+            this.Close(); //close window
+            HighScore highScore = new HighScore(); //open highscore window
+            highScore.Visibility = Visibility.Visible; //set highscore window as visible 
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Hide();
-            MainWindow hoofdmenu = new MainWindow();
-            hoofdmenu.Visibility = Visibility.Visible;
+            this.Hide(); //close window
+            MainWindow hoofdmenu = new MainWindow(); //open hoofdmenu window
+            hoofdmenu.Visibility = Visibility.Visible; //set hoofdmenu window as visible 
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            this.Hide();
-            PlayerData playerData = new PlayerData();
-            playerData.Visibility = Visibility.Visible;
+            this.Hide(); //close window
+            PlayerData playerData = new PlayerData(); //open player1 window again 
+            playerData.Visibility = Visibility.Visible; //set player1 window as visible 
         }
     }
 }
