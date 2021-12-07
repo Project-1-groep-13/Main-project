@@ -20,33 +20,33 @@ namespace project_p1
         public PlayAgainMenu()
         {
             InitializeComponent();
-            ImageBrush bg = new ImageBrush();
-            bg.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/purple.png"));
+            ImageBrush bg = new ImageBrush(); //create new imagebrush bg 
+            bg.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/purple.png")); //getting image from folder for bg
             bg.TileMode = TileMode.Tile;
             bg.Viewport = new Rect(0, 0, 0.15, 0.15);
             bg.ViewportUnits = BrushMappingMode.RelativeToBoundingBox;
-            this.Background = bg;
+            this.Background = bg; //setting background as imagebrush bg
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            this.Close();
-            EasyMode easyMode = new EasyMode();
-            easyMode.Visibility = Visibility.Visible;
+            this.Close(); //close window
+            EasyMode easyMode = new EasyMode(); //open easymode window
+            easyMode.Visibility = Visibility.Visible; //set easymode window as visible 
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            this.Close();
-            HighScore highScore = new HighScore();
-            highScore.Visibility = Visibility.Visible;
+            this.Close(); //close window 
+            HighScore highScore = new HighScore(); //open highscore window 
+            highScore.Visibility = Visibility.Visible; //set highscore window as visible 
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Hide();
-            MainWindow hoofdmenu = new MainWindow();
-            hoofdmenu.Visibility = Visibility.Visible;
+            this.Hide(); //close window 
+            MainWindow hoofdmenu = new MainWindow(); //open hoofdmenu window 
+            hoofdmenu.Visibility = Visibility.Visible; //set hoofdmenu window as visible 
         }
     }
 }
