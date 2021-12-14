@@ -44,6 +44,9 @@ namespace project_p2
         Rect Player1HitBox;
         Rect Player2HitBox;
 
+        /// <summary>
+        /// Initialise 2 player game
+        /// </summary>
         public Game2Player()
         {
             InitializeComponent();
@@ -52,7 +55,7 @@ namespace project_p2
             Gametimer.Start(); //start gametimer  
 
             MyCanvas.Focus();
-            //achtergrond//
+            //achtergrond
             ImageBrush background = new ImageBrush(); //create imagebrush for background 
             background.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/purple.png")); //taking image background from folder
             background.TileMode = TileMode.Tile;
@@ -71,7 +74,13 @@ namespace project_p2
             Player2.Fill = Player2Image; //filling player 2 with playerimage for player 2
 
         }
-
+        
+        /// <summary>
+        /// Database connection 
+        /// </summary>
+        /// <param name="queryString"></param>
+        /// <param name="connectionString"></param>
+        /// <returns></returns>
         private static void CreateCommand(string queryString, string connectionString)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -81,11 +90,17 @@ namespace project_p2
                 command.ExecuteNonQuery();
             }
         }
+        
+        /// <summary>
+        /// Pauzeknop functionaliteit
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <returns></returns>
         private void WhenButtonClick(object sender, RoutedEventArgs e)
         {
             if (PauseOnOff == true)
             {
-
                 Gametimer.Stop();
             }
             if (PauseOnOff == false)
