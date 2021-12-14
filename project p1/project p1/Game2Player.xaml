@@ -60,7 +60,5 @@
             Canvas.Left="105" 
             Canvas.Top="10" 
             RenderTransformOrigin="-1.12,0.948" Content="Quit" Click="Quit_Click"/>
-
-
     </Canvas>
 </Window>

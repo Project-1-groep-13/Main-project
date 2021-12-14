@@ -22,15 +22,15 @@ namespace project_p2
     /// </summary>
     public partial class Game2Player : Window
     {
-        DispatcherTimer Gametimer = new DispatcherTimer(); //making a gametimer 
-        bool MoveLeft1, MoveRight1, MoveLeft2, MoveRight2; //making the bools for the movement for both players 
-        List<Rectangle> ItemRemover = new List<Rectangle>(); //creating the list for the itemremover 
+        DispatcherTimer Gametimer = new DispatcherTimer();
+        bool MoveLeft1, MoveRight1, MoveLeft2, MoveRight2;
+        List<Rectangle> ItemRemover = new List<Rectangle>();
         const string ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Hajan\\OneDrive - NHL Stenden\\Documenten\\GitHub\\Main-project\\project p1\\project p1\\DataBase\\GameDatabase.mdf;Integrated Security = True";
 
 
-        Random Ran = new Random(); //randomiser 
+        Random Ran = new Random();
 
-        int EnemySpriteCounter = 0; //all the ints, bools, strings and rects for start game 
+        int EnemySpriteCounter = 0;
         int EnemyCounter = 100;
         int PlayerSpeed = 10;
         int Limit = 50;
@@ -47,28 +47,28 @@ namespace project_p2
         public Game2Player()
         {
             InitializeComponent();
-            Gametimer.Interval = TimeSpan.FromMilliseconds(20); //set timespeed for gametimer 
+            Gametimer.Interval = TimeSpan.FromMilliseconds(20);
             Gametimer.Tick += Gameloop;
-            Gametimer.Start(); //start gametimer  
+            Gametimer.Start();
 
             MyCanvas.Focus();
             //achtergrond//
-            ImageBrush background = new ImageBrush(); //create imagebrush for background 
-            background.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/purple.png")); //taking image background from folder
+            ImageBrush background = new ImageBrush();
+            background.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/purple.png"));
             background.TileMode = TileMode.Tile;
             background.Viewport = new Rect(0, 0, 0.15, 0.15);
             background.ViewportUnits = BrushMappingMode.RelativeToBoundingBox;
-            MyCanvas.Background = background; //setting background 
+            MyCanvas.Background = background;
 
             //player 1 foto//
-            ImageBrush Player1Image = new ImageBrush(); //creating imagebrush for player 1 
-            Player1Image.ImageSource = new BitmapImage(new Uri("pack://application:,,,/playerimage/P1_5.png")); //taking image player 1 from folder
-            Player1.Fill = Player1Image; //filling player 1 with playerimage for player 1
+            ImageBrush Player1Image = new ImageBrush();
+            Player1Image.ImageSource = new BitmapImage(new Uri("pack://application:,,,/playerimage/P1_5.png"));
+            Player1.Fill = Player1Image;
 
             //player 2 foto//
-            ImageBrush Player2Image = new ImageBrush(); //creating imagebrush for player 2 
-            Player2Image.ImageSource = new BitmapImage(new Uri("pack://application:,,,/playerimage/P2_5.png")); //taking image player 2 from folder
-            Player2.Fill = Player2Image; //filling player 2 with playerimage for player 2
+            ImageBrush Player2Image = new ImageBrush();
+            Player2Image.ImageSource = new BitmapImage(new Uri("pack://application:,,,/playerimage/P2_5.png"));
+            Player2.Fill = Player2Image;
 
         }
 
@@ -101,19 +101,13 @@ namespace project_p2
                 PauseOnOff = true;
             }
         }
-        
-        /// <summary>
-        /// Gameplay 2Player gamemode
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        /// <returns></returns>
+
         private void Gameloop(object sender, EventArgs e)
         {
             ImageBrush Player1Image = new ImageBrush();
             ImageBrush Player2Image = new ImageBrush();
-            Player1HitBox = new Rect(Canvas.GetLeft(Player1), Canvas.GetTop(Player1), Player1.Width, Player1.Height); //creating playerhitbox player 1
-            Player2HitBox = new Rect(Canvas.GetLeft(Player2), Canvas.GetTop(Player2), Player2.Width, Player2.Height); //creating playerhitbox player 2
+            Player1HitBox = new Rect(Canvas.GetLeft(Player1), Canvas.GetTop(Player1), Player1.Width, Player1.Height);
+            Player2HitBox = new Rect(Canvas.GetLeft(Player2), Canvas.GetTop(Player2), Player2.Width, Player2.Height);
 
             EnemyCounter -= 1;
             //score setting//
@@ -153,19 +147,19 @@ namespace project_p2
                 {
                     Canvas.SetTop(x, Canvas.GetTop(x) - 20);
 
-                    Rect BulletHitBox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height); //creating bullethitbox 
+                    Rect BulletHitBox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
                     if (Canvas.GetTop(x) < 10)
                     {
-                        ItemRemover.Add(x); //if bullet is out of window add itemremover
+                        ItemRemover.Add(x);
                     }
 
                     foreach (var y in MyCanvas.Children.OfType<Rectangle>())
                     {
                         if (y is Rectangle && (string)y.Tag == "enemy")
                         {
-                            Rect EnemyHit = new Rect(Canvas.GetLeft(y), Canvas.GetTop(y), y.Width, y.Height); //creating enemyhitbox
+                            Rect EnemyHit = new Rect(Canvas.GetLeft(y), Canvas.GetTop(y), y.Width, y.Height);
 
-                            if (BulletHitBox.IntersectsWith(EnemyHit)) //bullet and enemy hit, both in itemremover and score +1
+                            if (BulletHitBox.IntersectsWith(EnemyHit))
                             {
                                 ItemRemover.Add(x);
                                 ItemRemover.Add(y);
@@ -176,23 +170,23 @@ namespace project_p2
                 }
 
                 if (x is Rectangle && (string)x.Tag == "enemy")
-                {  //enemy hit op player of bij player langs
+                {  //enemy hit op player of bij player langs//
                     Canvas.SetTop(x, Canvas.GetTop(x) + EnemySpeed);
 
-                    if (Canvas.GetTop(x) > 750) //if enemy gets under window, enemy in itemremover and damage -1 for player 1 and 2 
+                    if (Canvas.GetTop(x) > 750)
                     {
                         ItemRemover.Add(x);
                         Damage1-=1;
                         Damage2-=1;
                     }
-                    Rect EnemyHitBox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height); //create enemyhitbox
+                    Rect EnemyHitBox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
 
-                    if (Player1HitBox.IntersectsWith(EnemyHitBox)) //player 1 hits enemy, enemy in itemremover and damage player 1 -1 
+                    if (Player1HitBox.IntersectsWith(EnemyHitBox))
                     {
                         ItemRemover.Add(x);
                         Damage1 -= 1;
                     }
-                    if (Player2HitBox.IntersectsWith(EnemyHitBox)) //player 2 hits enemy, enemy in itemremover and damage player 2 -1 
+                    if (Player2HitBox.IntersectsWith(EnemyHitBox))
                     {
                         ItemRemover.Add(x);
                         Damage2 -= 1;
@@ -245,43 +239,45 @@ namespace project_p2
 
             }
 
-            foreach (Rectangle i in ItemRemover) //itemremover clear 
+            foreach (Rectangle i in ItemRemover)
             {
                 MyCanvas.Children.Remove(i);
             }
-            //moeilijheidsgraad en Game Over
-
+            //moeilijheidsgraad en Game Over//
+            /*
+                if (Score > 10)
+            {
+                Limit = 20;
+                EnemySpeed = 20;
+            }
+            */
             #region EVENTS AND SCORE LIMITS
-            // Maakt spel moeilijker als de score hoger dan 10 is
             if (Score > 10)
             {
                 Limit = 20;
                 EnemySpeed = 11;
             }
-            
-            // Maakt spel nog moeilijker als de score hoger dan 50 is
             if (Score > 50)
             {
                 Limit = 20;
                 EnemySpeed = 12;
             }
-            
-            // Verwijdert player 2 als zijn levens onder 0 komt
             if (Damage1>0 && Damage2<0)
             {
                Damage2 = 0;
                MyCanvas.Children.Remove(Player2);
             }
-            
-            // Verwijdert player 1 als zijn levens onder 0 komt
             if (Damage2>0 && Damage1<0)
             {
                 Damage1 = 0;
                 MyCanvas.Children.Remove(Player1);
             }
-            
-            // Als beide spelers zijn overleden komt er een pop-up met knoppen voor opnieuw spelen en de score
-            if (Damage1 < 0 && Damage2 < 0) 
+            if (Damage1==0 && Damage2==0)
+            {
+                Damage2 = 0;
+                Damage1 = 0;
+            }
+            if (Damage1 <0 && Damage2<0)
             {
                 CreateCommand("INSERT INTO [Game2player] ([playerName1],[playerName2],[HighScore]) VALUES ('" + player1name + "','" + player2name + "','" + Score + "')", ConnectionString);
                 Gametimer.Stop();
@@ -298,101 +294,84 @@ namespace project_p2
 
            
         }
-        /// <summary>
-        /// If movement buttons are pressed movement starts
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        /// <returns></returns>
+        //knop voor verplaatsing instellen//
         private void OnKeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Left) // Verplaatsing links P1
+            if (e.Key == Key.Left)
             {
                 MoveLeft1 = true;
             }
-            if (e.Key == Key.Right) // Verplaatsing rechts P1
+            if (e.Key == Key.Right)
             {
                 MoveRight1 = true;
             }
-            if (e.Key == Key.A) // Verplaatsing links P2
+            if (e.Key == Key.A)
             {
                 MoveLeft2 = true;
             }
-            if (e.Key == Key.D) // Verplaatsing rechts P2
+            if (e.Key == Key.D)
             {
                 MoveRight2 = true;
             }
 
         }
-        
-        /// <summary>
-        /// Als knop losgelaten wordt wordt de actie die bij de knop hoort toegepast. Dit is verplaatsing stoppen of kogel afvuren.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        /// <returns></returns>
+        //knop voor verplaatsing instellen + bullet spawnen
         private void OnKeyUp(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Left) // Stop bewegen P1
+            if (e.Key == Key.Left)
             {
                 MoveLeft1 = false;
             }
-            if (e.Key == Key.Right) // Stop bewegen P1
+            if (e.Key == Key.Right)
             {
                 MoveRight1 = false;
             }
-            if (e.Key == Key.Space) // kogel afvuren P1
+            if (e.Key == Key.Space)
             {
-                ImageBrush bullet = new ImageBrush(); //creating new imagebrush for bullet 
-                bullet.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/kannonskogel.png")); //getting image from folder for bullet
-                Rectangle NewBullet = new Rectangle //creating new rectangle for bullet 
+                ImageBrush bullet = new ImageBrush();
+                bullet.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/kannonskogel.png"));
+                Rectangle NewBullet = new Rectangle
                 {
                     Tag = "bullet",
                     Height = 5,
                     Width = 5,
-                    Fill = bullet, //filling rectangle with image bullet 
+                    Fill = bullet,
                     
                 };
-                Canvas.SetLeft(NewBullet, Canvas.GetLeft(Player1) + Player1.Width / 2); //set location bullet to player 1 
+                Canvas.SetLeft(NewBullet, Canvas.GetLeft(Player1) + Player1.Width / 2);
                 Canvas.SetTop(NewBullet, Canvas.GetTop(Player1) - NewBullet.Height);
 
-                MyCanvas.Children.Add(NewBullet); //adding bullet to window
+                MyCanvas.Children.Add(NewBullet);
             }
-            if (e.Key == Key.A) // Stop bewegen P2
+            if (e.Key == Key.A)
             {
                 MoveLeft2 = false;
             }
-            if (e.Key == Key.D) // Stop bewegen P2
+            if (e.Key == Key.D)
             {
                 MoveRight2 = false;
             }
-            if (e.Key == Key.W) // Kogel afvuren P2
+            if (e.Key == Key.W)
             {
-                ImageBrush bullet = new ImageBrush(); //creating new imagebrush for bullet 
-                bullet.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/kannonskogel.png")); //getting image from folder for bullet 
-                Rectangle NewBullet = new Rectangle //creating new rectangle for bullet 
+                ImageBrush bullet = new ImageBrush();
+                bullet.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/kannonskogel.png"));
+                Rectangle NewBullet = new Rectangle
                 {
                     Tag = "bullet",
                     Height = 5,
                     Width = 5,
-                    Fill = bullet, //filling rectangle with image bullet 
+                    Fill = bullet,
                    
                 };
-                Canvas.SetLeft(NewBullet, Canvas.GetLeft(Player2) + Player2.Width / 2); //set location bullet to player 2 
+                Canvas.SetLeft(NewBullet, Canvas.GetLeft(Player2) + Player2.Width / 2);
                 Canvas.SetTop(NewBullet, Canvas.GetTop(Player2) - NewBullet.Height);
 
-                MyCanvas.Children.Add(NewBullet); //adding bullet to window 
+                MyCanvas.Children.Add(NewBullet);
             }
 
         }
-        
-        /// <summary>
-        /// Quits game if button is clicked
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        /// <returns></returns>
-        private void Quit_Click(object sender, RoutedEventArgs e) //quit button click
+
+        private void Quit_Click(object sender, RoutedEventArgs e)
         {
             CreateCommand("INSERT INTO [Game2player] ([playerName1],[playerName2],[HighScore]) VALUES ('" + player1name + "','" + player2name + "','" + Score + "')", ConnectionString);
             Gametimer.Stop();
@@ -400,12 +379,7 @@ namespace project_p2
             
         }
 
-        /// <summary>
-        /// P2 movement left and rigth
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        /// <returns></returns>
+        //knop voor verplaatsing instellen
         private void OnKeyDown2(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.A)
@@ -416,14 +390,10 @@ namespace project_p2
             {
                 MoveRight2 = true;
             }
+
         }
 
-        /// <summary>
-        /// P2 movement stops and bullet spawn
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        /// <returns></returns>
+        //knop voor verplaatsing instellen + bullet spawnen//
         private void OnKeyUp2(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.A)
@@ -436,7 +406,7 @@ namespace project_p2
             }
             if (e.Key == Key.W)
             {
-                Rectangle NewBullet = new Rectangle //same as above, bullet rectangle creation player 2 
+                Rectangle NewBullet = new Rectangle
                 {
                     Tag = "bullet",
                     Height = 20,
@@ -444,22 +414,19 @@ namespace project_p2
                     Fill = Brushes.White,
                     Stroke = Brushes.Red,
                 };
-                Canvas.SetLeft(NewBullet, Canvas.GetLeft(Player2) + Player2.Width / 2); //setting bullet location to player2 
+                Canvas.SetLeft(NewBullet, Canvas.GetLeft(Player2) + Player2.Width / 2);
                 Canvas.SetTop(NewBullet, Canvas.GetTop(Player2) - NewBullet.Height);
 
-                MyCanvas.Children.Add(NewBullet); //adding bullet to window
+                MyCanvas.Children.Add(NewBullet);
 
             }
         }
 
-        /// <summary>
-        /// Spawn enemie with random skin
-        /// </summary>
-        /// <returns></returns>
+        //enemys generaten
         private void MakeEnimies()
         {
-            ImageBrush EnemySprite = new ImageBrush(); //creating imagebrush enemy 
-            EnemySpriteCounter = Ran.Next(1, 5); //creating random number for enemy skin 
+            ImageBrush EnemySprite = new ImageBrush();
+            EnemySpriteCounter = Ran.Next(1, 5);
 
             switch (EnemySpriteCounter)
             {
@@ -481,17 +448,17 @@ namespace project_p2
 
             }
 
-            Rectangle NewEnemy = new Rectangle //creating rectangle for enemy 
+            Rectangle NewEnemy = new Rectangle
             {
                 Tag = "enemy",
                 Height = 50,
                 Width = 56,
-                Fill = EnemySprite, //filling rectangle with enemy image from above 
+                Fill = EnemySprite,
             };
 
-            Canvas.SetTop(NewEnemy, -100); //setting location enemy 
+            Canvas.SetTop(NewEnemy, -100);
             Canvas.SetLeft(NewEnemy, Ran.Next(30, 430));
-            MyCanvas.Children.Add(NewEnemy); //adding enemy to window 
+            MyCanvas.Children.Add(NewEnemy);
         }
     }
 }
