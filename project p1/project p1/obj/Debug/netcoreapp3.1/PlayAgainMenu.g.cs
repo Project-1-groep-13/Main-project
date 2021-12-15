@@ -69,7 +69,7 @@ namespace project_p1 {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/project p1_g5v53akb_wpftmp;component/playagainmenu.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/project p1;component/playagainmenu.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\PlayAgainMenu.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
