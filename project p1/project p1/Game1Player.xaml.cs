@@ -136,7 +136,7 @@ namespace project_p1
             {   //bullet hit op enemy//
                 if (x is Rectangle && (string)x.Tag == "bullet")
                 {
-                    Canvas.SetTop(x, Canvas.GetTop(x) - 20);
+                    Canvas.SetTop(x, Canvas.GetTop(x) - 20); //setting location of bullet
 
                     Rect BulletHitBox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height); //make bullethitbox
                     if (Canvas.GetTop(x) < 10)
