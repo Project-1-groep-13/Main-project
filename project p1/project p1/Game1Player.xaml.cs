@@ -24,7 +24,7 @@ namespace project_p1
         DispatcherTimer Gametimer = new DispatcherTimer();
         bool MoveLeft, MoveRight;
         List<Rectangle> ItemRemover = new List<Rectangle>();
-        //Connection String must be chnaged in different branches to match the file path of the device that you are using
+        //Connection String must be changed in different branches to match the file path of the device that you are using
         const string ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Hajan\\OneDrive - NHL Stenden\\Documenten\\GitHub\\Main-project\\project p1\\project p1\\DataBase\\GameDatabase.mdf;Integrated Security = True";
         PlayerData playerData = new PlayerData();
 
