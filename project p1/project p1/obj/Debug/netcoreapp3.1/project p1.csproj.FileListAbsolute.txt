@@ -188,3 +188,10 @@ C:\Users\Chris\OneDrive\Documenten\GitHub\Chrispasma\project p1\project p1\obj\D
 C:\Users\Chris\OneDrive\Documenten\GitHub\Chrispasma\project p1\project p1\obj\Debug\netcoreapp3.1\PlayAgainMenu.baml
 C:\Users\Chris\OneDrive\Documenten\GitHub\Chrispasma\project p1\project p1\obj\Debug\netcoreapp3.1\PlayerData.baml
 C:\Users\Chris\OneDrive\Documenten\GitHub\Chrispasma\project p1\project p1\obj\Debug\netcoreapp3.1\PlayerData2.baml
+\\Mac\Home\Documents\School\HBO ICT\Module 1\Arcade Game\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\pAgain1player.g.cs
+\\Mac\Home\Documents\School\HBO ICT\Module 1\Arcade Game\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\pAgain2player.g.cs
+\\Mac\Home\Documents\School\HBO ICT\Module 1\Arcade Game\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\PlayerData2.g.cs
+\\Mac\Home\Documents\School\HBO ICT\Module 1\Arcade Game\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\pAgain1player.baml
+\\Mac\Home\Documents\School\HBO ICT\Module 1\Arcade Game\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\pAgain2player.baml
+\\Mac\Home\Documents\School\HBO ICT\Module 1\Arcade Game\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\PlayerData2.baml
+\\Mac\Home\Documents\School\HBO ICT\Module 1\Arcade Game\Main-project\project p1\project p1\obj\Debug\netcoreapp3.1\project p1.csproj.CopyComplete

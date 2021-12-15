@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Chris\\OneDrive\\Documenten\\GitHub\\Chrispasma\\project p1\\project p1\\project p1.csproj": {}
+    "\\\\Mac\\Home\\Documents\\School\\HBO ICT\\Module 1\\Arcade Game\\Main-project\\project p1\\project p1\\project p1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Chris\\OneDrive\\Documenten\\GitHub\\Chrispasma\\project p1\\project p1\\project p1.csproj": {
+    "\\\\Mac\\Home\\Documents\\School\\HBO ICT\\Module 1\\Arcade Game\\Main-project\\project p1\\project p1\\project p1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Chris\\OneDrive\\Documenten\\GitHub\\Chrispasma\\project p1\\project p1\\project p1.csproj",
+        "projectUniqueName": "\\\\Mac\\Home\\Documents\\School\\HBO ICT\\Module 1\\Arcade Game\\Main-project\\project p1\\project p1\\project p1.csproj",
         "projectName": "project p1",
-        "projectPath": "C:\\Users\\Chris\\OneDrive\\Documenten\\GitHub\\Chrispasma\\project p1\\project p1\\project p1.csproj",
-        "packagesPath": "C:\\Users\\Chris\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Chris\\OneDrive\\Documenten\\GitHub\\Chrispasma\\project p1\\project p1\\obj\\",
+        "projectPath": "\\\\Mac\\Home\\Documents\\School\\HBO ICT\\Module 1\\Arcade Game\\Main-project\\project p1\\project p1\\project p1.csproj",
+        "packagesPath": "C:\\Users\\svenimholz\\.nuget\\packages\\",
+        "outputPath": "\\\\Mac\\Home\\Documents\\School\\HBO ICT\\Module 1\\Arcade Game\\Main-project\\project p1\\project p1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\Chris\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\svenimholz\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -59,6 +59,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.win-arm64",
+              "version": "[3.1.22, 3.1.22]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -67,7 +73,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -44,6 +44,9 @@ namespace project_p2
         Rect Player1HitBox;
         Rect Player2HitBox;
 
+        /// <summary>
+        /// Initialise 2 player game
+        /// </summary>
         public Game2Player()
         {
             InitializeComponent();
@@ -52,7 +55,7 @@ namespace project_p2
             Gametimer.Start(); //start gametimer  
 
             MyCanvas.Focus();
-            //achtergrond//
+            //achtergrond
             ImageBrush background = new ImageBrush(); //create imagebrush for background 
             background.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/purple.png")); //taking image background from folder
             background.TileMode = TileMode.Tile;
@@ -60,18 +63,24 @@ namespace project_p2
             background.ViewportUnits = BrushMappingMode.RelativeToBoundingBox;
             MyCanvas.Background = background; //setting background 
 
-            //player 1 foto//
+            //player 1 foto
             ImageBrush Player1Image = new ImageBrush(); //creating imagebrush for player 1 
             Player1Image.ImageSource = new BitmapImage(new Uri("pack://application:,,,/playerimage/P1_5.png")); //taking image player 1 from folder
             Player1.Fill = Player1Image; //filling player 1 with playerimage for player 1
 
-            //player 2 foto//
+            //player 2 foto
             ImageBrush Player2Image = new ImageBrush(); //creating imagebrush for player 2 
             Player2Image.ImageSource = new BitmapImage(new Uri("pack://application:,,,/playerimage/P2_5.png")); //taking image player 2 from folder
             Player2.Fill = Player2Image; //filling player 2 with playerimage for player 2
 
         }
 
+        /// <summary>
+        /// Database connection 
+        /// </summary>
+        /// <param name="queryString"></param>
+        /// <param name="connectionString"></param>
+        /// <returns></returns>
         private static void CreateCommand(string queryString, string connectionString)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -81,6 +90,13 @@ namespace project_p2
                 command.ExecuteNonQuery();
             }
         }
+
+        /// <summary>
+        /// Pauzeknop functionaliteit
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <returns></returns>
         private void WhenButtonClick(object sender, RoutedEventArgs e)
         {
             if (PauseOnOff == true)
@@ -102,6 +118,12 @@ namespace project_p2
             }
         }
 
+        /// <summary>
+        /// Gameplay 2Player gamemode
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <returns></returns>
         private void Gameloop(object sender, EventArgs e)
         {
             ImageBrush Player1Image = new ImageBrush();
@@ -110,17 +132,17 @@ namespace project_p2
             Player2HitBox = new Rect(Canvas.GetLeft(Player2), Canvas.GetTop(Player2), Player2.Width, Player2.Height); //creating playerhitbox player 2
 
             EnemyCounter -= 1;
-            //score setting//
+            //score setting
             Scoretext.Content = "score: " + Score;
             Damage1text.Content = "Lives: " + Damage1;
             Damage2text.Content = "Lives: " + Damage2;
-            //enemy spawning//
+            //enemy spawning
             if (EnemyCounter < 0)
             {
                 MakeEnimies();
                 EnemyCounter = Limit;
             }
-            //player 1 movement//
+            //player 1 movement
             if (MoveLeft1 == true && Canvas.GetLeft(Player1) > 0)
             {
                 Canvas.SetLeft(Player1, Canvas.GetLeft(Player1) - PlayerSpeed);
@@ -130,7 +152,7 @@ namespace project_p2
                 Canvas.SetLeft(Player1, Canvas.GetLeft(Player1) + PlayerSpeed);
             }
 
-            //player 2 movement//
+            //player 2 movement
             if (MoveLeft2 == true && Canvas.GetLeft(Player2) > 0)
             {
                 Canvas.SetLeft(Player2, Canvas.GetLeft(Player2) - PlayerSpeed);
@@ -140,9 +162,9 @@ namespace project_p2
                 Canvas.SetLeft(Player2, Canvas.GetLeft(Player2) + PlayerSpeed);
             }
 
-            //actual gameplay//
+            //actual gameplay
             foreach (var x in MyCanvas.Children.OfType<Rectangle>())
-            {   //bullet hit op enemy//
+            {   //bullet hit op enemy
                 if (x is Rectangle && (string)x.Tag == "bullet")
                 {
                     Canvas.SetTop(x, Canvas.GetTop(x) - 20);
@@ -170,7 +192,7 @@ namespace project_p2
                 }
 
                 if (x is Rectangle && (string)x.Tag == "enemy")
-                {  //enemy hit op player of bij player langs//
+                {  //enemy hit op player of bij player langs
                     Canvas.SetTop(x, Canvas.GetTop(x) + EnemySpeed);
 
                     if (Canvas.GetTop(x) > 750) //if enemy gets under window, enemy in itemremover and damage -1 for player 1 and 2 
@@ -294,28 +316,40 @@ namespace project_p2
 
            
         }
-        //knop voor verplaatsing instellen//
+
+        /// <summary>
+        /// If movement buttons are pressed movement starts
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <returns></returns>
         private void OnKeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Left)
+            if (e.Key == Key.Left) // Verplaatsing links P1
             {
                 MoveLeft1 = true;
             }
-            if (e.Key == Key.Right)
+            if (e.Key == Key.Right) // Verplaatsing recths P1
             {
                 MoveRight1 = true;
             }
-            if (e.Key == Key.A)
+            if (e.Key == Key.A) // Verplaatsing links P2
             {
                 MoveLeft2 = true;
             }
-            if (e.Key == Key.D)
+            if (e.Key == Key.D) // Verplaatsing rechts P2
             {
                 MoveRight2 = true;
             }
 
         }
-        //knop voor verplaatsing instellen + bullet spawnen
+
+        /// <summary>
+        /// Als knop losgelaten wordt wordt de actie die bij de knop hoort toegepast. Dit is verplaatsing stoppen of kogel afvuren.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <returns></returns>
         private void OnKeyUp(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Left)
@@ -343,6 +377,7 @@ namespace project_p2
 
                 MyCanvas.Children.Add(NewBullet); //adding bullet to window
             }
+
             if (e.Key == Key.A)
             {
                 MoveLeft2 = false;
@@ -371,6 +406,12 @@ namespace project_p2
 
         }
 
+        /// <summary>
+        /// Quits game if button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <returns></returns>
         private void Quit_Click(object sender, RoutedEventArgs e) //quit button click
         {
             CreateCommand("INSERT INTO [Game2player] ([playerName1],[playerName2],[HighScore]) VALUES ('" + player1name + "','" + player2name + "','" + Score + "')", ConnectionString);
@@ -379,7 +420,12 @@ namespace project_p2
             
         }
 
-        //knop voor verplaatsing instellen
+        /// <summary>
+        /// P2 movement left and rigth
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <returns></returns>
         private void OnKeyDown2(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.A)
@@ -393,7 +439,12 @@ namespace project_p2
 
         }
 
-        //knop voor verplaatsing instellen + bullet spawnen//
+        /// <summary>
+        /// P2 movement stops and bullet spawn
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <returns></returns>
         private void OnKeyUp2(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.A)
@@ -422,7 +473,10 @@ namespace project_p2
             }
         }
 
-        //enemys generaten
+        /// <summary>
+        /// Spawn enemie with random skin
+        /// </summary>
+        /// <returns></returns>
         private void MakeEnimies()
         {
             ImageBrush EnemySprite = new ImageBrush(); //creating imagebrush enemy 
